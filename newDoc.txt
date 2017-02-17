@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hello World
+=======
+Jesse's editing this now.  I'm saving this.
+>>>>>>> origin/master
