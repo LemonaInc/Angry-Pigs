@@ -26,7 +26,8 @@ class App{
 		this.ImPublic = 42; // A public variable
         this.entityList = {
             captives: 	  [],
-            castlePieces: [] //Fill with objects
+            castlePieces: [], //Fill with objects
+						wallBlocks: []
         }
         this.loadLevelList();
 		this.dragHandler = new DraggableHandler( $('#gameScreen'), this.entityList );
@@ -81,11 +82,24 @@ class App{
 						"height" : "70px"
 				};
 
-				$("#castlePiece_" + newObjectID).css({ left: spawnX,
+     // wallBlocks
+				case "wallBlock":
+			        // Give object an ID and write the initial spawn location to entityList.
+					var newObjectID = this.entityList.wallBlocks.length;
+					$(entity).attr('id', "wallBlock_" + newObjectID);
+					this.entityList.wallBlocks[newObjectID] = {
+							"ID"	 : "wallBlock_" + newObjectID,
+							"xPos"   : spawnX,
+							"yPos"   : spawnY,
+							"width"  : "128px",
+							"height" : "128px"
+					};
+
+				$("#wallBlock_" + newObjectID).css({ left: spawnX,
 													   top:  spawnY
 													 });
-				break;
 
+			// Captive ObjectID
 			case "captive":
 				var newObjectID = this.entityList.captives.length;
 				$(entity).attr('id', "captive_" + newObjectID);
@@ -100,6 +114,25 @@ class App{
 				$("#captive_" + newObjectID).css({ left: spawnX,
 													top: spawnY,
 												 });
+
+
+												 case "tree":
+											 		var newObjectID = this.entityList.trees.length;
+											 		$(entity).attr('id', "tree_" + newObjectID);
+											 		this.entityList.trees[newObjectID] = {
+											 				"ID"	 : "tree_" + newObjectID,
+											 				"xPos"   : spawnX,
+											 				"yPos"   : spawnY,
+											 				"width"  : "128px",
+											 				"height" : "128px"
+											 		};
+
+											 		$("tree_" + newObjectID).css({ left: spawnX,
+											 											top: spawnY,
+											 										 });
+
+
+
 				break;
 		}
 		console.log(entity);
@@ -157,6 +190,7 @@ class App{
 				for (let i = 0; i < levelDataObj.castlePieces.length; i++) {
 					var newCastlePiece = document.createElement("div");
 					$(newCastlePiece).addClass("draggable wall");
+
 					$(newCastlePiece).attr('id', "castlePiece_" + i);
 
 					this.entityList.castlePieces[i] = {
@@ -174,6 +208,32 @@ class App{
 					});
 
 			        $("#gameScreen").append(newCastlePiece);
+				}
+
+
+
+				// WallBlocks
+				for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
+					var newCastlePiece = document.createElement("div");
+					$(newWallBlock).addClass("draggable wall");
+
+					$(newWallBlock).attr('id', "wallBlock_" + i);
+
+					this.entityList.wallBlocks[i] = {
+							"ID"	 : "castlePiece_" + i,
+							"xPos"   : levelDataObj.wallBlocks[i].xPos,
+							"yPos"   : levelDataObj.wallBlocks[i].yPos,
+							"width"  : levelDataObj.wallBlocks[i].width,
+							"height" : levelDataObj.wallBlocks[i].height
+					};
+
+					$(newCastlePiece).css({ height: levelDataObj.wallBlocks[i].height,
+									 width: levelDataObj.wallBlocks[i].width,
+										left: levelDataObj.wallBlocks[i].xPos,
+										 top: levelDataObj.wallBlocks[i].yPos
+					});
+
+							$("#gameScreen").append(newWallBlock);
 				}
 
 				// Captives
