@@ -35,6 +35,36 @@
 	position: absolute;
 }
 
+#wallBlock {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/wallBlock.png");
+
+}
+
+
+.wallBlock {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/wallBlock.png");
+	position: absolute;
+}
+
+.Tree {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/Tree.png");
+	position: absolute;
+}
+
+
+#Tree {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/Tree.png");
+
+}
+
 .selected {
 	box-shadow: 0px 0px 25px 15px rgba(0,187,255,1);
 	background-color: rgba(0,187,255,0.97);
