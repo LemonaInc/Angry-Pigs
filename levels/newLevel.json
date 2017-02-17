@@ -1,0 +1,199 @@
+{
+    "levelName": "newLevel",
+    "author": "jesseandJaxon",
+    "projectiles": "7777",
+    "bgImage": "..\/images\/bg1.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "367px",
+            "yPos": "154px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "633px",
+            "yPos": "152px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_2",
+            "xPos": "362px",
+            "yPos": "444px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_3",
+            "xPos": "430px",
+            "yPos": "446px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_4",
+            "xPos": "500px",
+            "yPos": "433px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_5",
+            "xPos": "597px",
+            "yPos": "367px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_6",
+            "xPos": "554px",
+            "yPos": "424px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_7",
+            "xPos": "259px",
+            "yPos": "433px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_8",
+            "xPos": "333px",
+            "yPos": "430px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "castlePieces": [
+        {
+            "ID": "castlePiece_0",
+            "xPos": "362px",
+            "yPos": "120px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_1",
+            "xPos": "824px",
+            "yPos": "468px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_2",
+            "xPos": "753px",
+            "yPos": "394px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_3",
+            "xPos": "648px",
+            "yPos": "338px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_4",
+            "xPos": "544px",
+            "yPos": "327px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_5",
+            "xPos": "423px",
+            "yPos": "338px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_6",
+            "xPos": "326px",
+            "yPos": "387px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_7",
+            "xPos": "236px",
+            "yPos": "476px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_8",
+            "xPos": "627px",
+            "yPos": "115px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_9",
+            "xPos": "443px",
+            "yPos": "458px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_10",
+            "xPos": "417px",
+            "yPos": "387px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_11",
+            "xPos": "392px",
+            "yPos": "457px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_12",
+            "xPos": "156px",
+            "yPos": "310px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_13",
+            "xPos": "400px",
+            "yPos": "463px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_14",
+            "xPos": "588px",
+            "yPos": "410px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_15",
+            "xPos": "974px",
+            "yPos": "-2px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_16",
+            "xPos": "3px",
+            "yPos": "1px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_17",
+            "xPos": "951px",
+            "yPos": "556px",
+            "width": "40px",
+            "height": "70px"
+        }
+    ]
+}

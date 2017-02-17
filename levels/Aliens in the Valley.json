@@ -1,0 +1,65 @@
+{
+    "levelName": "Aliens in the Valley",
+    "author": "Jesse",
+    "projectiles": "0",
+    "bgImage": "..\/images\/bg1.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "227px",
+            "yPos": "389px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "301px",
+            "yPos": "428px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_2",
+            "xPos": "362px",
+            "yPos": "444px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_3",
+            "xPos": "430px",
+            "yPos": "446px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_4",
+            "xPos": "500px",
+            "yPos": "433px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_5",
+            "xPos": "597px",
+            "yPos": "367px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_6",
+            "xPos": "554px",
+            "yPos": "424px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_7",
+            "xPos": "259px",
+            "yPos": "433px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "castlePieces": []
+}

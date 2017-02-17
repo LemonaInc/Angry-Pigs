@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Enables elements to touch sides of browser window. */
+
+  background-image: url('images/Field.jpg');
+    background-size: 100%;
+}
+
+
+ul.tabBar li a:hover {background-color: #ddd; cursor: pointer;}
+ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
+.container {
+
+  width:1334px; /* Defined width keeps divs from falling down the page on resize
+                   Change so that border-box works with this. */
+}
+
+#title {
+
+}
+
+#inspector {
+  
+  color: white;
+  border-style: inherit;
+  border-color: white;
+  border-width: inherit;
+  width: 300px;
+  height: 648px;
+  float: left;
+}
+
+#gameScreen {
+background-image: url('images/.jpg');
+
+border: solid;
+border-color: white;
+
+  width: 1024px;
+  height: 648px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+
+  background-size: 100%;
+
+}

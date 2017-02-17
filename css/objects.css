@@ -1,0 +1,41 @@
+.objectInList {
+ 	margin: 20px;
+}
+
+.objectInList:hover {
+	cursor: pointer;
+}
+
+#wall {
+	width: 40px;
+	height: 70px;
+	background-image: url("../images/wallTexture.png");
+	background-color: grey;
+}
+
+#captive {
+	width: 28px;
+	height: 73px;
+	background-image: url("../images/captive.png");
+}
+
+.captive {
+	width: 28px;
+	height: 73px;
+	background-image: url("../images/captive.png");
+	position: absolute;
+}
+
+
+.wall {
+	width: 40px;
+	height: 70px;
+	background-image: url("../images/wallTexture.png");
+	background-color: grey;
+	position: absolute;
+}
+
+.selected {
+	box-shadow: 0px 0px 25px 15px rgba(0,187,255,1);
+	background-color: rgba(0,187,255,0.97);
+}

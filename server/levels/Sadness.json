@@ -1,0 +1,87 @@
+{
+    "levelName": "Sadness",
+    "author": "Jesse",
+    "projectiles": "666",
+    "bgImage": "..\/images\/bg1.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "367px",
+            "yPos": "154px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "633px",
+            "yPos": "152px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "castlePieces": [
+        {
+            "ID": "castlePiece_0",
+            "xPos": "362px",
+            "yPos": "120px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_1",
+            "xPos": "824px",
+            "yPos": "468px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_2",
+            "xPos": "753px",
+            "yPos": "394px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_3",
+            "xPos": "648px",
+            "yPos": "338px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_4",
+            "xPos": "544px",
+            "yPos": "327px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_5",
+            "xPos": "423px",
+            "yPos": "338px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_6",
+            "xPos": "326px",
+            "yPos": "387px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_7",
+            "xPos": "236px",
+            "yPos": "476px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_8",
+            "xPos": "627px",
+            "yPos": "115px",
+            "width": "40px",
+            "height": "70px"
+        }
+    ]
+}
