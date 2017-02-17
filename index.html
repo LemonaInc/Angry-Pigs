@@ -22,6 +22,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/Box2dWeb-2.1.a.3.min.js"></script>
 
 </head>
 <body>
@@ -29,44 +30,29 @@
 	<div class="container">
 
 		<!-- Set Background of Level editor -->
-
-
+		
 		<div id="title"><h4>Castles and UFOs</h4></div>
 			<a href="#" data-activates="slide-out" class=" button-collapse btn-large waves-effect waves-light #00bcd4 cyan">Edit Level</a>
-
-
 
 		<div id="gameScreen"></div>
 			<div id="response-one" class="the-return">
 				<div id="game-area">
 					<!--  Filled in with actual level info programmatically -->
-
-
 				</div>
 			</div>
 
 		<div id="inspector">
 		
-
-
-
 			<!-- Slide out Navbar -->
+			
 			  <ul id="slide-out" class="side-nav">
-
-
 					<li><a href="javscript:void(0)" class="tabLinks  btn-small waves-effect waves-light #00bcd4 cyan" onclick="openTab(event, 'levelEditor')">Level</a></li>
 					<li><a href="javscript:void(0)" class="tabLinks  btn-small waves-effect waves-light #00bcd4 cyan" onclick="openTab(event, 'objectList')">Objects</a></li>
 					<li><a href="javscript:void(0)" class="tabLinks  btn-small waves-effect waves-light #00bcd4 cyan" onclick="openTab(event, 'objectProperties')">Properties</a></li>
-
-
 			    <li><div class="userView">
 			      <div class="background">
 			        <img src="images/longbackground.png">
-
-
-
 			      </div>
-
 
 			<div id="objectProperties" class="tabContent">
 				<form class="objectPropertiesForm" accept-charset="utf-8">
