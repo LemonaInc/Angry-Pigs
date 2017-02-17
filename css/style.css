@@ -13,17 +13,15 @@ body {
 ul.tabBar li a:hover {background-color: #ddd; cursor: pointer;}
 ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 .container {
-
   width:1334px; /* Defined width keeps divs from falling down the page on resize
                    Change so that border-box works with this. */
-}
-
-#title {
-
+  /*position: relative;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #inspector {
-  
   color: white;
   border-style: inherit;
   border-color: white;
@@ -34,17 +32,23 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 }
 
 #gameScreen {
-background-image: url('images/.jpg');
-
-border: solid;
-border-color: white;
-
+  background-image: url('images/.jpg');
+  border: solid;
+  border-color: white;
   width: 1024px;
   height: 648px;
-  float: left;
   overflow: hidden;
-  position: relative;
-
+  position: absolute;
+  top: 13%;
+  margin: 0px 0 0 0px;
   background-size: 100%;
-
+  
 }
+
+#editButton {
+  position: fixed;
+  top: 15px !important;
+  left: 15px !important;
+}
+
+
