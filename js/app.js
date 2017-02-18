@@ -213,7 +213,7 @@ class App{
 
 
 				// WallBlocks
-				for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
+/*				for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
 					var newCastlePiece = document.createElement("div");
 					$(newWallBlock).addClass("draggable wall");
 
@@ -234,7 +234,7 @@ class App{
 					});
 
 							$("#gameScreen").append(newWallBlock);
-				}
+				}*/
 
 				// Captives
 				for (let i = 0; i < levelDataObj.captives.length; i++) {
