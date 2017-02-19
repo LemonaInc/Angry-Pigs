@@ -6,7 +6,10 @@ body {
   margin: 0; /* Enables elements to touch sides of browser window. */
 
   background-image: url('images/Field.jpg');
-    background-size: 100%;
+  background-size: 100%;
+/* /*     display: flex;
+  
+    justify-content: center; */ */
 }
 
 
@@ -18,7 +21,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   /*position: relative;*/
   display: flex;
   justify-content: center;
-  align-items: center;
+/*   align-items: center; */
 }
 
 #inspector {
@@ -37,12 +40,37 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   border-color: white;
   width: 1024px;
   height: 648px;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: absolute;
   top: 13%;
   margin: 0px 0 0 0px;
   background-size: 100%;
-  
+}
+
+#ufo {
+	background-image: url('../images/ufo.png');
+	width: 560px;
+  	height: 160px;
+  	position: absolute;
+  	margin: -320px 0 0 240px;
+}
+
+.ufoControls {
+   position:fixed;
+   bottom:0px;
+   height:130px;
+   width:400px;
+   display: flex;
+   background-color: #ffffff;
+}
+
+.energyBall {
+	background-image: url('../images/energyball.png');
+	width: 46px;
+	height: 45px;
+	left: 500px;
+	top: 40px;
+	position: absolute;
 }
 
 #editButton {

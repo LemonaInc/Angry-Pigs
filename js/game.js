@@ -2,7 +2,7 @@
 
 class Game {
 	constructor() {
-		this.world = new WorldController($("gameScreen"));
+		this.world = new WorldController($("#gameScreen"));
 		this.physicsEntities = [];
         this.loadLevelList();
         
@@ -11,6 +11,15 @@ class Game {
 			event.preventDefault();
 			this.loadLevel( event );
 		})
+		
+		//Create event listener for mouse
+		$('#gameScreen').click( () => {
+			this.fire();
+		})
+		
+/*		$('#gameScreen').mousemove( () => {
+			this.rotateCannon();
+		})*/
 	}
 	
 	loadLevelList() {
@@ -58,6 +67,14 @@ class Game {
 
 				// Clear field before loading new level contents in.
 				$( "#gameScreen" ).empty();
+				this.world = new WorldController($("#gameScreen"));
+	            this.physicsEntities = [];
+	            
+				$('#gameScreen').prepend(`<div id="ufo"></div>`);
+	            $('#ufo').animate({
+	            	margin: "-90px 0 0 240px"
+	            }, 1500);
+	            
 
 				// Turn levelDataStr into a JS object.
 				let levelDataObj = JSON.parse( levelDataStr );
@@ -74,7 +91,7 @@ class Game {
 
 					$(newCastlePiece).attr('id', "castlePiece_" + i);
 
-					this.entityList.castlePieces[i] = {
+					levelDataObj.castlePieces[i] = {
 							"ID"	 : "castlePiece_" + i,
 							"xPos"   : levelDataObj.castlePieces[i].xPos,
 							"yPos"   : levelDataObj.castlePieces[i].yPos,
@@ -92,6 +109,7 @@ class Game {
 			        
 			        let ent = new Entity(this.world, $(newCastlePiece));
 			        this.physicsEntities.push(ent);
+			        /*ent.applyForce(300, 30000);*/
 				}
 
 
@@ -151,13 +169,26 @@ class Game {
 			        this.physicsEntities.push(ent);
 				}
 			})
-
-
-		// bigLevel.json
-
-		// Send level name to php.  Tell it to return the json file with this name.
-
-		// Parse here.
+	}
+	
+/*	rotateCannon() {
+		console.log(event.offsetX);
+		console.log(event.offsetY);
+	}*/
+	
+	fire() {
+		let forceFromMouseY = (event.offsetY * 3000);
+		
+		console.log(event.offsetX);
+		console.log(event.offsetY);
+		
+		var energyBall = document.createElement("div");
+		$(energyBall).addClass("energyBall");
+		$('#gameScreen').append(energyBall);
+		
+		let ent = new Entity(this.world, $(energyBall));
+		this.physicsEntities.push(ent);
+		ent.applyForce( ( -event.offsetX ), forceFromMouseY );
 	}
 
 }

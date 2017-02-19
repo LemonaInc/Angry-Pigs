@@ -76,16 +76,13 @@ class WorldController {
     	
     	//---THIS IS FOR VISUAL TESTING ONLY
         //setup debug Draw
-//        var debugDraw = new Physics.DebugDraw();
-//        debugDraw.SetSprite(document.getElementById("debugCanvas").getContext('2d'));
-//        debugDraw.SetDrawScale(WORLD_SCALE);
-//        debugDraw.SetFillAlpha(0.5);
-//        debugDraw.SetLineThickness(1.0);
-//        debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-//        m.physicsModel.SetDebugDraw(debugDraw);
-        
-    
-    	
+        var debugDraw = new Physics.DebugDraw;
+        debugDraw.SetSprite(document.getElementById("debugCanvas").getContext('2d'));
+        debugDraw.SetDrawScale(WORLD_SCALE);
+        debugDraw.SetFillAlpha(0.5);
+        debugDraw.SetLineThickness(1.0);
+        debugDraw.SetFlags(Physics.DebugDraw.e_shapeBit | Physics.DebugDraw.e_jointBit);
+        __m.physicsModel.SetDebugDraw(debugDraw);
     }
 
     
