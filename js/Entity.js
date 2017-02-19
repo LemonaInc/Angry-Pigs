@@ -155,6 +155,12 @@ class Entity {
         
         return aBodyModel;
     }
+    
+    __fly() {
+
+        //this.applyForce(new Physics.Vec2(0, -60), this.physicsModel.GetWorldCenter());
+
+    }
 }
 
 
