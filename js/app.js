@@ -262,7 +262,6 @@ class App{
 				}
 			})
 
-
 		// bigLevel.json
 
 		// Send level name to php.  Tell it to return the json file with this name.

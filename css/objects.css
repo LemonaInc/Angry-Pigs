@@ -50,6 +50,58 @@
 	position: absolute;
 }
 
+
+
+#redBlock {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/redBlock.png");
+
+}
+
+
+.redBlock {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/redBlock.png");
+	position: absolute;
+}
+
+#cube {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/cube.png");
+
+}
+
+
+.cube {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/cube.png");
+	position: absolute;
+}
+
+
+#bannanas {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/bannanas.png");
+
+}
+
+
+.bannanas {
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/bannanas.png");
+	position: absolute;
+}
+
+
+
+
+
 .Tree {
 	width: 128px;
 	height: 128px;

@@ -1,27 +1,25 @@
-
-
 class Game {
 	constructor() {
 		this.world = new WorldController($("#gameScreen"));
 		this.physicsEntities = [];
         this.loadLevelList();
-        
+
 		$('.loadLevelForm').on('submit', ( event ) => {
 			// I'll receive level name and action load.
 			event.preventDefault();
 			this.loadLevel( event );
 		})
-		
+
 		//Create event listener for mouse
 		$('#gameScreen').click( () => {
 			this.fire();
 		})
-		
+
 /*		$('#gameScreen').mousemove( () => {
 			this.rotateCannon();
 		})*/
 	}
-	
+
 	loadLevelList() {
 		let command = {'action' : 'loadLevelList'};
 		let request = $.param( command );
@@ -32,31 +30,31 @@ class Game {
 			  $("#levelSelectDropdown").append(levelListString);
 		  });
 	}
-	
+
 	update() {
 		this.world.update();
 	}
-	
-	render() {	
+
+	render() {
 		let m = __private__.get( this );
 		this.physicsEntities.forEach( ( entity ) => {
 			entity.render();
 		});
-		
-		this.world.model.ClearForces();    	
+
+		this.world.model.ClearForces();
 	}
-	
+
 	run() {
 		let frame = ( timestamp ) => {
 			this.update();
 			this.render();
-			
-			window.requestAnimationFrame( frame );	
+
+			window.requestAnimationFrame( frame );
 		}
-		
+
 		window.requestAnimationFrame( frame );
 	}
-	
+
 	loadLevel( event ) {
 		let formParams = $('.loadLevelForm').serialize();
 		let command    = { 'action' : 'loadLevel' };
@@ -69,12 +67,12 @@ class Game {
 				$( "#gameScreen" ).empty();
 				this.world = new WorldController($("#gameScreen"));
 	            this.physicsEntities = [];
-	            
+
 				$('#gameScreen').prepend(`<div id="ufo"></div>`);
 	            $('#ufo').animate({
 	            	margin: "-90px 0 0 240px"
 	            }, 1500);
-	            
+
 
 				// Turn levelDataStr into a JS object.
 				let levelDataObj = JSON.parse( levelDataStr );
@@ -106,7 +104,7 @@ class Game {
 					});
 
 			        $("#gameScreen").append(newCastlePiece);
-			        
+
 			        let ent = new Entity(this.world, $(newCastlePiece));
 			        this.physicsEntities.push(ent);
 			        /*ent.applyForce(300, 30000);*/
@@ -115,12 +113,10 @@ class Game {
 
 
 				// WallBlocks
-/*				for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
+				/* for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
 					var newCastlePiece = document.createElement("div");
 					$(newWallBlock).addClass("draggable wall");
-
 					$(newWallBlock).attr('id', "wallBlock_" + i);
-
 					this.entityList.wallBlocks[i] = {
 							"ID"	 : "castlePiece_" + i,
 							"xPos"   : levelDataObj.wallBlocks[i].xPos,
@@ -128,18 +124,17 @@ class Game {
 							"width"  : levelDataObj.wallBlocks[i].width,
 							"height" : levelDataObj.wallBlocks[i].height
 					};
-
 					$(newCastlePiece).css({ height: levelDataObj.wallBlocks[i].height,
 									 width: levelDataObj.wallBlocks[i].width,
 										left: levelDataObj.wallBlocks[i].xPos,
 										 top: levelDataObj.wallBlocks[i].yPos
 					});
-
 							$("#gameScreen").append(newWallBlock);
-							
 					        let ent = new Entity(this.world, $(newCastlePiece));
 					        this.physicsEntities.push(ent);
 				}*/
+
+
 
 				// Captives
 				for (let i = 0; i < levelDataObj.captives.length; i++) {
@@ -164,28 +159,28 @@ class Game {
 			        $("#gameScreen").append(newCaptive);
 
 					$(".draggable").click(( event ) => this.selectObject( event ));
-					
+
 			        let ent = new Entity(this.world, $(newCaptive));
 			        this.physicsEntities.push(ent);
 				}
 			})
 	}
-	
+
 /*	rotateCannon() {
 		console.log(event.offsetX);
 		console.log(event.offsetY);
 	}*/
-	
+
 	fire() {
 		let forceFromMouseY = (event.offsetY * 3000);
-		
+
 		console.log(event.offsetX);
 		console.log(event.offsetY);
-		
+
 		var energyBall = document.createElement("div");
 		$(energyBall).addClass("energyBall");
 		$('#gameScreen').append(energyBall);
-		
+
 		let ent = new Entity(this.world, $(energyBall));
 		this.physicsEntities.push(ent);
 		ent.applyForce( ( -event.offsetX ), forceFromMouseY );

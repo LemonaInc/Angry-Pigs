@@ -1,159 +1,199 @@
 <!DOCTYPE html>
-<!--
-  Castles & UFOs
-   @copyright: (C) December 2017 Jesse Carmack, All rights reserved.
-   @author:    Jesse Carmack
-   @version:   0.1
-   @summary:   An Angry Birds clone.  Shh.
--->
-<html>
+<html lang="en">
 <head>
-	<title>Castles and UFOs</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/objects.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Level Editor</title>
 
-	<!-- CSS  -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-	<link href="materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-	<link href="style.css" type="text/css" rel="stylesheet"	media="screen,projection"/>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="js/Box2dWeb-2.1.a.3.min.js"></script> <!--  TODO: Can move this to be loaded when game menu option is clicked -->
+<!--Jquery Code Source-->
+  <script src='https://code.jquery.com/jquery-latest.js'></script>
+
+  <!-- ADDED AJAX SCRIPT -->
+
+  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
 
-	<div class="container">
-		<!-- Set Background of Level editor -->
-		<a id="editButton" href="#" data-activates="slide-out"
-			class=" button-collapse btn-large waves-effect waves-light #00bcd4 cyan">Edit Level</a>
-		<div id="gameScreen">
-			<!--  Filled in with actual level info programmatically -->
-			<div id="title"> <!-- title will be cleared on menu selection -->
-				<h4>Castles and UFOs</h4>
-			</div>
-		</div>
 
-		<canvas id="debugCanvas" style="width:1024px; height:648px;"></canvas>
+<!-- Style CSS Elements for page -->
+<style>
 
-		<!-- Don't think this is needed at all... TODO: Test this
-			<div id="response-one" class="the-return">
-				<div id="game-area"></div>
-			</div>
-			-->
-			
-			
-				
-	<div class="ufoControls">
-	<ul>
-		<li>direction LEFT</li>
-		<li>direction RIGHT</li>
-		<li>power DOWN</li>
-		<li>power UP</li>
-		<li>fire</li>
-	</ul>
-	
-	</div>
-	</div>
+  * {
+    box-sizing: border-box;
+  }
 
-	<div id="inspector">
+  body {
+    margin: 0; /* Enables elements to touch sides of browser window. */
 
-		<!-- Slide out Navbar -->
-		<ul id="slide-out" class="side-nav">
-			<li><a href="javscript:void(0)"
-				class="tabLinks  btn-small waves-effect waves-light #00bcd4 cyan"
-				onclick="openTab(event, 'levelEditor')">Level</a></li>
-			<li><a href="javscript:void(0)"
-				class="tabLinks  btn-small waves-effect waves-light #00bcd4 cyan"
-				onclick="openTab(event, 'objectList')">Objects</a></li>
-			<li><a href="javscript:void(0)"
-				class="tabLinks  btn-small waves-effect waves-light #00bcd4 cyan"
-				onclick="openTab(event, 'objectProperties')">Properties</a></li>
-			<li><div class="userView">
-					<div class="background">
-						<img src="images/longbackground.png">
-					</div>
+    background-image: url('images/Valley.jpg');
+      background-size: 100%;
+  }
 
-					<div id="objectProperties" class="tabContent">
-						<form class="objectPropertiesForm" accept-charset="utf-8">
-							<h5>Position</h5>
-							xPos: <input type="text" name="xPos" value=""
-								placeholder="X Position" /><br> yPos: <input type="text"
-								name="yPos" value="" placeholder="Y Position" />
-							<h5>Size</h5>
-							width: <input type="text" name="width" value=""
-								placeholder="Width" /><br> height: <input type="text"
-								name="height" value="" placeholder="Height" />
-							<h5>Physics Properties</h5>
-							bounce: <input type="text" name="bounce" value=""
-								placeholder="Bounce" /><br> mass: <input type="text"
-								name="mass" value="" placeholder="Mass" /><br> friction: <input
-								type="text" name="friction" value="" placeholder="Friction" />
-							<h5>Texture</h5>
-							texture: <input type="text" name="texture" value=""
-								placeholder="URL of texture" /> <input type="submit"
-								class="btn-small waves-effect waves-light #424242 grey darken-3"
-								name="action" value="submit" />
-						</form>
-					</div>
+  </style>
 
-					<div id="levelEditor" class="tabContent">
-						<form class="saveLevelForm" accept-charset="utf-8">
-							<h5>Save</h5>
-							Level: <input type="text" name="levelName" value=""
-								placeholder="Level Name" /> Author: <input type="text"
-								name="author" value="" placeholder="Level Name" />
 
-							<h4>Properties</h4>
-							Projectiles: <input type="text" name="projectiles" value=""
-								placeholder="Amount of projectiles" /> Background Image: <input
-								type="text" name="bgImage" value="../images/Field.jpg" /> <input
-								type="submit"
-								class="btn-small waves-effect waves-light #424242 grey darken-3"
-								name="action" value="save" />
-						</form>
+   <div class="fixed-action-btn toolbar">
+      <a class="btn-floating btn-large #424242 grey darken-3">
+        <i class="large material-icons">perm_media</i>
+      </a>
+      <ul>
+        <li class="waves-effect waves-light"><a href="#!">Aliens Valley</a></li>
+        <li class="waves-effect waves-light"><a href="#!">Spaceship Level</a></li>
+        <li class="waves-effect waves-light"><a href="#!">Rooftop</a></li>
+        <li class="waves-effect waves-light"><a href="#!">Down Below</a></li>
+      </ul>
+    </div>
 
-						<form class="loadLevelForm" accept-charset="utf-8">
-							<h5>Load</h5>
-							Select Level: <select id="levelSelectDropdown"
-								class='dropdown-button btn' name="Level">
-								<!--  generated in code -->
-							</select> <input type="submit" name="action"
-								class="btn-small waves-effect waves-light#424242 grey darken-3"
-								value="load" />
-						</form>
+  <nav>
+      <div class="nav-wrapper #00b0ff light-blue accent-3">
+        <a href="#!" class="brand-logo center "Angry Pigs Level Editor</a>
+        <ul class="center hide-on-med-and-down">
 
-					</div>
+                                       <!-- Level Buttons -->
+               <a class="waves-effect waves-light btn-large #ffd54f amber lighten-2"><i class="material-icons left" >cloud</i>Load Level</a>
+              <a class="btn tooltipped btn-large #26c6da cyan lighten-1" data-position="bottom" data-delay="50" data-tooltip="Go to level">Level Editor</a>
 
-					<div id="objectList" class="tabContent">
-						<div id="wall" class="objectInList"></div>
-						<div id="captive" class="objectInList"></div>
-					</div>
+              <a class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3">
+              <i class="tooltipped material-icons" data-position="bottom" data-delay="50" data-tooltip="Create a new level" >add</i>
+            </a>
 
-				</div>
-		</ul>
-	</div>
+<!-- End Navigation -->
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
 
-	<!-- Script Section -->
+      <div class="row center">
+      <img width="500" height="201" src="images/logo.png" alt="logo">
+      </div>
 
-	<script src="js/Physics.js"></script>
-	<script src="js/WorldController.js"></script>
-	<script src="js/Entity.js"></script>
-	<script src="js/game.js"></script>
-	<script src="js/DraggableHandlerES6.js"></script>
-	<script src="js/niceties.js"></script>
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="js/materialize.js"></script>
-	<script src="js/init.js"></script>
-	<!-- Script for sidenav-->
-	<script>	<!-- Initialize collapse button -->
-		$(".button-collapse").sideNav();
-		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-		//$('.collapsible').collapsible();
-	</script>
+<div class="container">
 
-	<script src="game.js"></script>
+  <h5>Select a level</h5>
+ <select class="browser-default #26c6da cyan lighten-1">
+   <option value="" disabled selected>Choose a level</option>
+   <option value="1">Level 1</option>
+   <option value="2">Level 2</option>
+   <option value="3">Level 3</option>
+ </select>
 
-	<script src="app.js"></script>
+ <div id="inspector">
 
+ <form class="loadLevelForm" accept-charset="utf-8">
+   <h5>Load</h5>
+   Select Level: <select id="levelSelectDropdown"
+     class='dropdown-button btn' name="Level">
+     <!--  generated in code -->
+   </select> <input type="submit" name="action"
+     class="btn-small waves-effect waves-light#424242 grey darken-3"
+     value="load" />
+ </form>
+ </div>
+
+
+
+ <a class="btn tooltipped btn-large #26c6da cyan lighten-1" data-position="bottom" data-delay="50" data-tooltip="Play Game">Start The game</a>
+
+      <div class="container">
+
+
+<!--Show Hide Script-->
+
+<script>
+// Materialize.toast(message, displayLength, className, completeCallback);
+Materialize.toast('Hello', 4000) // 4000 is the duration of the toast
+</script>
+
+
+<script>
+      $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+
+  </script>
+
+  <div class="container">
+    <div class="section">
+    </div>
+  </div>
+
+<!-- End of body -->
 </body>
+
+
+<div class="card card-panel hoverable">
+
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/Background.png">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Featured Level<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Featured Level<i class="material-icons right">close</i></span>
+      <p>A featured level description</p>
+    </div>
+  </div>
+
+
 </html>
+
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <script   $(document).ready(function() {
+    $('select').material_select();
+  }); ></script>
+
+  <script   $('select').material_select('destroy'); ></script>
+
+<!-- Import game and app scripts -->
+
+<script src="js/Physics.js"></script>
+<script src="js/WorldController.js"></script>
+<script src="js/Entity.js"></script>
+<script src="js/game.js"></script>
+<script src="js/DraggableHandlerES6.js"></script>
+<script src="js/niceties.js"></script>
+
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<!-- Script for sidenav-->
+
+
+
+
+  <script>
+        $('.dropdown-button').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false, // Does not change width of dropdown to that of the activator
+        hover: true, // Activate on hover
+        gutter: 0, // Spacing from edge
+        belowOrigin: false, // Displays dropdown below the button
+        alignment: 'left', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+      }
+    );
+
+    </script>
+
+    <script>   $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  }); </Script>
