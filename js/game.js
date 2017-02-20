@@ -1,5 +1,3 @@
-
-
 class Game {
 	constructor() {
 		this.world = new WorldController($("#gameScreen"));
@@ -115,12 +113,10 @@ class Game {
 
 
 				// WallBlocks
-				 for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
+				/* for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
 					var newCastlePiece = document.createElement("div");
 					$(newWallBlock).addClass("draggable wall");
-
 					$(newWallBlock).attr('id', "wallBlock_" + i);
-
 					this.entityList.wallBlocks[i] = {
 							"ID"	 : "castlePiece_" + i,
 							"xPos"   : levelDataObj.wallBlocks[i].xPos,
@@ -128,15 +124,12 @@ class Game {
 							"width"  : levelDataObj.wallBlocks[i].width,
 							"height" : levelDataObj.wallBlocks[i].height
 					};
-
 					$(newCastlePiece).css({ height: levelDataObj.wallBlocks[i].height,
 									 width: levelDataObj.wallBlocks[i].width,
 										left: levelDataObj.wallBlocks[i].xPos,
 										 top: levelDataObj.wallBlocks[i].yPos
 					});
-
 							$("#gameScreen").append(newWallBlock);
-
 					        let ent = new Entity(this.world, $(newCastlePiece));
 					        this.physicsEntities.push(ent);
 				}*/

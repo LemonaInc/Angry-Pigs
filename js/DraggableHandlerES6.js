@@ -104,20 +104,6 @@ class DraggableHandler {
 
 
 
-        // redBlock
-        else if ( $(event.target).hasClass("redBlock") ){
-          this.entityListRef.redBlocks[idExtracted].xPos = event.clientX - this.offsetX + "px";
-            this.entityListRef.redBlocks[idExtracted].yPos = event.clientY - this.offsetY + "px";
-        }
-
-
-        // Cubes
-        else if ( $(event.target).hasClass("cube") ){
-          this.entityListRef.cubes[idExtracted].xPos = event.clientX - this.offsetX + "px";
-            this.entityListRef.cubes[idExtracted].yPos = event.clientY - this.offsetY + "px";
-        }
-
-
     	};
     }
 
