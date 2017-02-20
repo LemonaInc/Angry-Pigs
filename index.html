@@ -10,6 +10,8 @@
   <link href="materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
+
+
 <!--Jquery Code Source-->
   <script src='https://code.jquery.com/jquery-latest.js'></script>
 
@@ -57,7 +59,7 @@
 
                                        <!-- Level Buttons -->
                <a class="waves-effect waves-light btn-large #ffd54f amber lighten-2"><i class="material-icons left" >cloud</i>Load Level</a>
-              <a class="btn tooltipped btn-large #26c6da cyan lighten-1" data-position="bottom" data-delay="50" data-tooltip="Go to level">Level Editor</a>
+              <a class="btn tooltipped btn-large #26c6da cyan lighten-1" href="editor.html" data-position="bottom" data-delay="50" data-tooltip="Go to level">Level Editor</a>
 
               <a class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3">
               <i class="tooltipped material-icons" data-position="bottom" data-delay="50" data-tooltip="Create a new level" >add</i>
@@ -81,19 +83,31 @@
    <option value="3">Level 3</option>
  </select>
 
+
+
+<!-- Load the level here -->
  <div id="inspector">
 
- <form class="loadLevelForm" accept-charset="utf-8">
-   <h5>Load</h5>
-   Select Level: <select id="levelSelectDropdown"
+   <li><a href="javscript:void(0)"
+     class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan"
+     onclick="openTab(event, 'levelEditor')">Level</a></li>
+   <li><a href="javscript:void(0)">
+
+ <form>
+
+  <class="loadLevelForm"  accept-charset="utf-8">
+   <h5>Load a level</h5>
+
+  <select id="levelSelectDropdown"
      class='dropdown-button btn' name="Level">
      <!--  generated in code -->
    </select> <input type="submit" name="action"
-     class="btn-small waves-effect waves-light#424242 grey darken-3"
+     class="btn-large waves-effect waves-light#424242 grey darken-3"
      value="load" />
- </form>
- </div>
+     <!-- Load the level here -->
 
+
+ </form>
 
 
  <a class="btn tooltipped btn-large #26c6da cyan lighten-1" data-position="bottom" data-delay="50" data-tooltip="Play Game">Start The game</a>
@@ -165,34 +179,39 @@ Materialize.toast('Hello', 4000) // 4000 is the duration of the toast
 
 <!-- Import game and app scripts -->
 
-<script src="js/Physics.js"></script>
-<script src="js/WorldController.js"></script>
-<script src="js/Entity.js"></script>
-<script src="js/game.js"></script>
-<script src="js/DraggableHandlerES6.js"></script>
-<script src="js/niceties.js"></script>
 
+<script src="js/niceties.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
+
 <!-- Script for sidenav-->
 
 
 
+<script>
 
-  <script>
-        $('.dropdown-button').dropdown({
-        inDuration: 300,
-        outDuration: 225,
-        constrainWidth: false, // Does not change width of dropdown to that of the activator
-        hover: true, // Activate on hover
-        gutter: 0, // Spacing from edge
-        belowOrigin: false, // Displays dropdown below the button
-        alignment: 'left', // Displays dropdown with edge aligned to the left of button
-        stopPropagation: false // Stops event propagation
-      }
-    );
+$('.loadLevelForm').on('submit', ( event ) => {
+  // I'll receive level name and action load.
+  event.preventDefault();
+  this.loadLevel( event );
+})
+}
 
-    </script>
+loadLevelList() {
+let command = {'action' : 'loadLevelList'};
+let request = $.param( command );
+
+$.post('server/', request)
+  .then(  levelListString  => {
+    console.log(levelListString);
+    $("#levelSelectDropdown").append(levelListString);
+  });
+}
+
+</script>
+
+
+  <script src='js/index.js'></script>
 
     <script>   $(document).ready(function(){
     $('.tooltipped').tooltip({delay: 50});
