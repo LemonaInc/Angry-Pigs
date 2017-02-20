@@ -50,6 +50,16 @@ class Game {
 			this.render();
 
 			window.requestAnimationFrame( frame );
+			
+//            for (var i = this.physicsEntities.length - 1; i >= 0; i--) {
+//                if(this.physicsEntities[i].type == "alien"){
+//
+//                	this.physicsEntities[i].fly();
+//                	alien++;
+//                    if(this.physicsEntities[i].model.m_xf.position.y < 0)
+//                    	alien--;
+//                }
+//            }
 		}
 
 		window.requestAnimationFrame( frame );
@@ -172,18 +182,25 @@ class Game {
 	}*/
 
 	fire() {
-		let forceFromMouseY = (event.offsetY * 3000);
+		//Determine angle from the centre of the UFO (where balls are released) to mouse cursor.
+		var ufoPoint = { x: 520, y: 10 }
+		var mousePoint = { x: event.clientX - $('#gameScreen').position().left, y: event.clientY - $('#gameScreen').position().top }
+		var angleDeg = Math.atan2(mousePoint.y - ufoPoint.y, mousePoint.x - ufoPoint.x) * 180 / Math.PI;
+		
+		//Determine difference between points using pythagorean theorem
+		var a = ufoPoint.x - mousePoint.x
+		var b = ufoPoint.y - mousePoint.y
+		var distanceBetweenPoints = Math.sqrt( a*a + b*b ) * 150;
 
-		console.log(event.offsetX);
-		console.log(event.offsetY);
-
+		//Create energyball in DOM
 		var energyBall = document.createElement("div");
 		$(energyBall).addClass("energyBall");
 		$('#gameScreen').append(energyBall);
-
+		
+		//Create energyball in physics, apply force.
 		let ent = new Entity(this.world, $(energyBall));
 		this.physicsEntities.push(ent);
-		ent.applyForce( ( -event.offsetX ), forceFromMouseY );
+		ent.applyForce( ( angleDeg ), distanceBetweenPoints );
 	}
 
 }
