@@ -7,9 +7,6 @@ body {
 
   background-image: url('images/Field.jpg');
   background-size: 100%;
-/* /*     display: flex;
-  
-    justify-content: center; */ */
 }
 
 
@@ -18,10 +15,8 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 .container {
   width:1334px; /* Defined width keeps divs from falling down the page on resize
                    Change so that border-box works with this. */
-  /*position: relative;*/
   display: flex;
   justify-content: center;
-/*   align-items: center; */
 }
 
 #inspector {
@@ -53,15 +48,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   	height: 160px;
   	position: absolute;
   	margin: -320px 0 0 240px;
-}
-
-.ufoControls {
-   position:fixed;
-   bottom:0px;
-   height:130px;
-   width:400px;
-   display: flex;
-   background-color: #ffffff;
+  	z-index: 5;
 }
 
 .energyBall {
