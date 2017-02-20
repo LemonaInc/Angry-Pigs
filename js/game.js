@@ -115,7 +115,7 @@ class Game {
 
 
 				// WallBlocks
-				/* for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
+				 for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
 					var newCastlePiece = document.createElement("div");
 					$(newWallBlock).addClass("draggable wall");
 

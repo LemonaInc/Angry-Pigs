@@ -52,18 +52,18 @@
 
 
 
-#redwall {
+#redBlock {
 	width: 128px;
 	height: 128px;
-	background-image: url("../images/redWall.png");
+	background-image: url("../images/redBlock.png");
 
 }
 
 
-.redwall {
+.redBlock {
 	width: 128px;
 	height: 128px;
-	background-image: url("../images/redWall.png");
+	background-image: url("../images/redBlock.png");
 	position: absolute;
 }
 
