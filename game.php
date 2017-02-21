@@ -22,23 +22,32 @@
 </head>
 <body>
 
-<div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
+<div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 	<div class="container">
 
-		<!-- Back Button -->
-
+		<!-- Back Button which goes back to index.html when clicked on -->
 		<a id="editButton"
-			class="waves-effect waves-light btn-large #ffd54f amber lighten-2"><i
-			class="material-icons left">reorder</i>Main Menu</a>
+			class="waves-effect waves-light btn-large #ffd54f amber lighten-2" href="index.html"><i
+			class="material-icons left"  >reorder</i>Main Menu</a>
+
+<!-- Reload Level Button which reloads the game.php scene -->
+			<a  id="reloadButton"
+			class="btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3
+" href="game.php"><i
+			class="material-icons left">loop</i>Reload</a>
 
 <!-- GameScreen -->
 		<div id="gameScreen">
+
+
 			<!--  Filled in with actual level info programmatically -->
 			<div id="title"> <!-- title will be cleared on menu selection -->
 				<h4>Castles and UFOs</h4>
 			</div>
+
+
 		</div>
 
 		<canvas id="debugCanvas" width=1024px height=648px></canvas>

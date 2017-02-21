@@ -74,3 +74,11 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   top: 15px !important;
   left: 15px !important;
 }
+
+
+#reloadButton {
+position: absolute;
+top: 15px !important;
+left: 250px !important;
+
+}
