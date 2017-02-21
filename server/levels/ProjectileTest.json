@@ -1,0 +1,9 @@
+{
+    "levelName": "ProjectileTest",
+    "author": "Jaxon",
+    "projectiles": "100",
+    "bgImage": "..\/images\/Field.jpg",
+    "captives": [],
+    "castlePieces": [],
+    "wallBlocks": []
+}

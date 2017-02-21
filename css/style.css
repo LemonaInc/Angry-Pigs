@@ -65,7 +65,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 
 #gameScreen {
   background-image: url('images/.jpg');
-  border: 
+  border:
   border-color: white;
   min-width: 1024px;
   min-height: 648px;
@@ -108,7 +108,22 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 
 #reloadButton {
 position: absolute;
+top: 90px !important;
+left: 15px !important;
+
+}
+
+#goToLevelEditor {
+position: absolute;
 top: 15px !important;
 left: 250px !important;
+
+}
+
+
+#mainMenuButton {
+position: absolute;
+top: 15px !important;
+left: 200px !important;
 
 }

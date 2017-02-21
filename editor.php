@@ -35,7 +35,7 @@
 
 
 		<!-- Reload Level Button which reloads the game.php scene -->
-			<a  id="reloadButton"
+			<a  id="mainMenuButton"
 			class="btn-large waves-effect waves-light #1de9b6 teal accent-3
 " href="index.html"><i
 			class="material-icons left">reorder</i>Main Menu</a>

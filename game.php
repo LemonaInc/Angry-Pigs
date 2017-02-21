@@ -33,10 +33,14 @@
 			class="material-icons left">reorder</i>Main Menu</a>
 
 <!-- Reload Level Button which reloads the game.php scene -->
-			<a  id="reloadButton"
-			class="btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3
-" href="game.php"><i
+			<a id="reloadButton"
+			class="btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3" href="game.php"><i
 			class="material-icons left">loop</i>Reload</a>
+
+			<!-- Go to level editor button -->
+			<a id="goToLevelEditor"
+			class=" btn-large waves-effect waves-light #b388ff deep-purple accent-1" href="editor.php"><i
+			class="material-icons left">dashboard</i>Level Editor</a>
 
 <!-- GameScreen -->
 		<div id="gameScreen">
@@ -49,7 +53,7 @@
 
 
 		</div>
-		
+
 
 
 		<canvas id="debugCanvas" width=1024px height=648px></canvas>
@@ -59,8 +63,8 @@
 				<div id="game-area"></div>
 			</div>
 			-->
-			
-			
+
+
 				<div class="background">
 				<div class="mountains"></div>
  				<div class="grass"></div>
