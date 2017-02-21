@@ -31,7 +31,7 @@
 
 		<a id="editButton"
 			class="waves-effect waves-light btn-large #ffd54f amber lighten-2"><i
-			class="material-icons left">cloud</i>Back</a>
+			class="material-icons left">reorder</i>Main Menu</a>
 
 <!-- GameScreen -->
 		<div id="gameScreen">
