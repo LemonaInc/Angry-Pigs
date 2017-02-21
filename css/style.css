@@ -31,7 +31,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   	max-width: 100%;
   	position: absolute;
 	top: 778px;
-} 
+}
 
 .mountains {
     position:absolute;
@@ -65,7 +65,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 
 #gameScreen {
   background-image: url('images/.jpg');
-  border: solid;
+  border: 
   border-color: white;
   min-width: 1024px;
   min-height: 648px;
