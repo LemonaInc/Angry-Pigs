@@ -30,7 +30,7 @@
 		<!-- Back Button which goes back to index.html when clicked on -->
 		<a id="editButton"
 			class="waves-effect waves-light btn-large #ffd54f amber lighten-2" href="index.html"><i
-			class="material-icons left"  >reorder</i>Main Menu</a>
+			class="material-icons left">reorder</i>Main Menu</a>
 
 <!-- Reload Level Button which reloads the game.php scene -->
 			<a  id="reloadButton"
@@ -74,11 +74,7 @@
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
 	<!-- Script for sidenav-->
-	<script>	<!-- Initialize collapse button -->
-		$(".button-collapse").sideNav();
-		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-		//$('.collapsible').collapsible();
-	</script>
+
 
 	<script src="js/game.js"></script>
 
