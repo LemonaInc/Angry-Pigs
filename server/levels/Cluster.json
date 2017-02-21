@@ -1,0 +1,101 @@
+{
+    "levelName": "Cluster",
+    "author": "Jesse",
+    "projectiles": "1000",
+    "bgImage": "..\/images\/bg1.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "368px",
+            "yPos": "482px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "castlePieces": [
+        {
+            "ID": "castlePiece_0",
+            "xPos": "433px",
+            "yPos": "318px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_1",
+            "xPos": "497px",
+            "yPos": "387px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_2",
+            "xPos": "318px",
+            "yPos": "431px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_3",
+            "xPos": "331px",
+            "yPos": "456px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_4",
+            "xPos": "240px",
+            "yPos": "409px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_5",
+            "xPos": "538px",
+            "yPos": "419px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_6",
+            "xPos": "364px",
+            "yPos": "381px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_7",
+            "xPos": "583px",
+            "yPos": "396px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_8",
+            "xPos": "488px",
+            "yPos": "452px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_9",
+            "xPos": "443px",
+            "yPos": "458px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_10",
+            "xPos": "417px",
+            "yPos": "387px",
+            "width": "40px",
+            "height": "70px"
+        },
+        {
+            "ID": "castlePiece_11",
+            "xPos": "392px",
+            "yPos": "457px",
+            "width": "40px",
+            "height": "70px"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "levelName": "JaxonLevel",
+    "author": "Jaxon",
+    "projectiles": "1",
+    "bgImage": "..\/images\/Field.jpg",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_2",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_3",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_4",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_5",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "castlePieces": [
+        {
+            "ID": "castlePiece_0",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "40px",
+            "height": "70px"
+        }
+    ],
+    "wallBlocks": [
+        {
+            "ID": "wallBlock_0",
+            "xPos": "455px",
+            "yPos": "321px",
+            "width": "128px",
+            "height": "128px"
+        },
+        {
+            "ID": "wallBlock_1",
+            "xPos": "188px",
+            "yPos": "467px",
+            "width": "128px",
+            "height": "128px"
+        },
+        {
+            "ID": "wallBlock_2",
+            "xPos": "851px",
+            "yPos": "444px",
+            "width": "128px",
+            "height": "128px"
+        },
+        {
+            "ID": "wallBlock_3",
+            "xPos": "668px",
+            "yPos": "340px",
+            "width": "128px",
+            "height": "128px"
+        },
+        {
+            "ID": "wallBlock_4",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "128px",
+            "height": "128px"
+        }
+    ]
+}

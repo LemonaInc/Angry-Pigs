@@ -1,0 +1,39 @@
+{
+    "levelName": "Blocks",
+    "author": "Jaxon",
+    "projectiles": "10",
+    "bgImage": "..\/images\/Field.jpg",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "400px",
+            "yPos": "170px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "castlePieces": [],
+    "wallBlocks": [
+        {
+            "ID": "wallBlock_0",
+            "xPos": "407px",
+            "yPos": "170px",
+            "width": "128px",
+            "height": "128px"
+        },
+        {
+            "ID": "wallBlock_1",
+            "xPos": "535px",
+            "yPos": "385px",
+            "width": "128px",
+            "height": "128px"
+        }
+    ]
+}
