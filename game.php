@@ -22,18 +22,32 @@
 </head>
 <body>
 
+
 <div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
-
 	<div class="container">
-		<!-- Set Background of Level editor -->
-		<a id="editButton" href="#" data-activates="slide-out"
-			class=" button-collapse btn-large waves-effect waves-light #ffd54f amber lighten-2">Game Menu</a>
+
+		<!-- Back Button which goes back to index.html when clicked on -->
+		<a id="editButton"
+			class="waves-effect waves-light btn-large #ffd54f amber lighten-2" href="index.html"><i
+			class="material-icons left">reorder</i>Main Menu</a>
+
+<!-- Reload Level Button which reloads the game.php scene -->
+			<a  id="reloadButton"
+			class="btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3
+" href="game.php"><i
+			class="material-icons left">loop</i>Reload</a>
+
+<!-- GameScreen -->
 		<div id="gameScreen">
+
+
 			<!--  Filled in with actual level info programmatically -->
 			<div id="title"> <!-- title will be cleared on menu selection -->
 				<h4>Castles and UFOs</h4>
 			</div>
+
+
 		</div>
 		
 
@@ -53,19 +67,13 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 
 	<div id="inspector">
-
-		<!-- Slide out Navbar -->
-		<ul id="slide-out" class="side-nav">
-
-			<li><div class="userView">
-					<div class="background">
-						<img src="images/longbackground.png">
-					</div>
+=======
+>>>>>>> origin/NewBranch
 
 
-		</ul>
 	</div>
 
 	<!-- Script Section -->
@@ -80,11 +88,7 @@
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
 	<!-- Script for sidenav-->
-	<script>	<!-- Initialize collapse button -->
-		$(".button-collapse").sideNav();
-		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-		//$('.collapsible').collapsible();
-	</script>
+
 
 	<script src="js/game.js"></script>
 

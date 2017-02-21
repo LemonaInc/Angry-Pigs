@@ -62,17 +62,27 @@ body {
 			<ul class="center hide-on-med-and-down">
 
 				<!-- Level Buttons -->
-				<a
-					class="waves-effect waves-light btn-large #ffd54f amber lighten-2"><i
-					class="material-icons left">cloud</i>Load Level</a>
+
+
+				<!-- Load Button -->
+
+
+        <!-- Level Editor Button -->
 				<a class="btn tooltipped btn-large #26c6da cyan lighten-1"
 					href="editor.php" data-position="bottom" data-delay="50"
-					data-tooltip="Go to level">Level Editor</a>
+					data-tooltip="Go to level editor"><i
+					class="material-icons left">dashboard</i>Level Editor</a>
+
 
 				<a
-					class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3">
+					<class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3 "href="editor.php?Level=Aliens+in+the+Valley.json" >
 					<i class="tooltipped material-icons" data-position="bottom"
-					data-delay="50" data-tooltip="Create a new level">add</i>
+					data-delay="50" data-tooltip="Start editing a default level">aspect_ratio</i>
+
+
+
+
+
 				</a>
 
 				<!-- End Navigation -->
@@ -86,22 +96,18 @@ body {
 						<div class="container">
 
 
-
-
-
 							<!-- Load the level here -->
 							<div id="inspector">
-
 
 									<form action="game.php"  method="get">
 
 										<h5>Load a level</h5>
-
 										<select id="levelSelectDropdown" class='browser-default #26c6da cyan lighten-1' name="Level">
 										</select>
-										<input type="submit" value="Submit" class="btn-large waves-effect waves-light#424242 grey darken-3" />
 
-									</form>  <!--<a class="btn tooltipped btn-large #26c6da cyan lighten-1" data-position="bottom" data-delay="50" data-tooltip="Play Game">Start The game</a> -->
+										<input type="submit" value="Play Game" class="btn tooltipped btn-large #26c6da cyan lighten-1"  data-position="bottom" data-delay="50"
+											data-tooltip="Play Selected Level"><i
+											class="material-icons">play_circle_outline</i>
 
 									<div class="container">
 
