@@ -35,6 +35,8 @@
 				<h4>Castles and UFOs</h4>
 			</div>
 		</div>
+		
+
 
 		<canvas id="debugCanvas" width=1024px height=648px></canvas>
 
@@ -43,7 +45,14 @@
 				<div id="game-area"></div>
 			</div>
 			-->
+			
+			
+				<div class="background">
+				<div class="mountains"></div>
+ 				<div class="grass"></div>
+		</div>
 	</div>
+
 
 	<div id="inspector">
 

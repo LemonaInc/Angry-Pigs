@@ -1,15 +1,15 @@
 * {
   box-sizing: border-box;
+  margin: 0; /* Enables elements to touch sides of browser window. */
+  padding: 0;
 }
 
 body {
-  margin: 0; /* Enables elements to touch sides of browser window. */
 
-  background-image: url('images/Field.jpg');
-  background-size: 100%;
-/* /*     display: flex;
-
-    justify-content: center; */ */
+  background-image: url('../images/gradient4.png');
+  background-repeat: repeat-x;
+  width: 100%;
+  max-width: 100%;
 }
 
 
@@ -18,11 +18,40 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 .container {
   width:1334px; /* Defined width keeps divs from falling down the page on resize
                    Change so that border-box works with this. */
-  /*position: relative;*/
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-/*   align-items: center; */
 }
+
+ .background {
+ 	background-image: url("../images/ground.png");
+    background-repeat: repeat-x;
+  	width: 100%;
+  	height: 100%;
+  	max-width: 100%;
+  	position: absolute;
+	top: 778px;
+} 
+
+.mountains {
+    position:absolute;
+    top:-300px;
+	background-image: url("../images/mountains.png");
+    background-repeat: repeat-x;
+    height: 300px;
+    width:100%
+}
+
+.grass {
+    position:absolute;
+    top:-17px;
+	background-image: url("../images/grass.png");
+    background-repeat: repeat-x;
+    height: 40px;
+    width:100%
+}
+
+
 
 #inspector {
   color: white;
@@ -38,13 +67,14 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   background-image: url('images/.jpg');
   border: solid;
   border-color: white;
-  width: 1024px;
-  height: 648px;
+  min-width: 1024px;
+  min-height: 648px;
   /*overflow: hidden;*/
-  position: absolute;
-  top: 13%;
+  position: relative;
   margin: 0px 0 0 0px;
   background-size: 100%;
+  top: 130px;
+  z-index: 10;
 }
 
 #ufo {
@@ -53,7 +83,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   	height: 160px;
   	position: absolute;
   	margin: -320px 0 0 240px;
-  	z-index: 5;
+  	z-index: 15;
 }
 
 .energyBall {
