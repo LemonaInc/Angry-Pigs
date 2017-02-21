@@ -26,9 +26,14 @@
 
 
 	<div class="container">
-		<!-- Set Background of Level editor -->
-		<a id="editButton" href="#" data-activates="slide-out"
-			class=" button-collapse btn-large waves-effect waves-light #ffd54f amber lighten-2">Game Menu</a>
+
+		<!-- Back Button -->
+
+		<a id="editButton"
+			class="waves-effect waves-light btn-large #ffd54f amber lighten-2"><i
+			class="material-icons left">cloud</i>Back</a>
+
+<!-- GameScreen -->
 		<div id="gameScreen">
 			<!--  Filled in with actual level info programmatically -->
 			<div id="title"> <!-- title will be cleared on menu selection -->
@@ -45,18 +50,7 @@
 			-->
 	</div>
 
-	<div id="inspector">
 
-		<!-- Slide out Navbar -->
-		<ul id="slide-out" class="side-nav">
-
-			<li><div class="userView">
-					<div class="background">
-						<img src="images/longbackground.png">
-					</div>
-
-
-		</ul>
 	</div>
 
 	<!-- Script Section -->

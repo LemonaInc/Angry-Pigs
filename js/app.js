@@ -41,6 +41,7 @@ class App{
 			event.preventDefault();
 			this.saveLevel( event );
 		});
+
 		$('.loadLevelForm').on('submit', ( event ) => {
 			// I'll receive level name and action load.
 			event.preventDefault();
