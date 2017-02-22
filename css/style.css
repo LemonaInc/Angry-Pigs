@@ -12,7 +12,6 @@ body {
   max-width: 100%;
 }
 
-
 ul.tabBar li a:hover {background-color: #ddd; cursor: pointer;}
 ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 .container {
@@ -125,5 +124,20 @@ left: 250px !important;
 position: fixed;
 top: 15px !important;
 left: 200px !important;
+
+}
+
+#popupButton {
+position: fixed;
+top: 200px !important;
+left: 15px !important;
+
+}
+
+
+#popupWinButton {
+position: fixed;
+top: 400px !important;
+left: 15px !important;
 
 }

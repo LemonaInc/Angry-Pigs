@@ -8,7 +8,6 @@ class Game {
 				// sounds
 				// Here is where the die sound is implemented
 
-
 				var playerFireSound = new Howl({
          src: ['FX/Cannon.wav'],
 				 autoplay: false,
@@ -17,7 +16,6 @@ class Game {
   			onend: function() {
     		console.log('Finished!');
 	  }
-
 
 
 
@@ -51,8 +49,8 @@ class Game {
 			playerFireSound.play();
 
 // Create modal popup here when you lost the game
-// MOVE THIS TO THE DIE FUNCTION 
-			$('#modal1').modal('open');
+// MOVE THIS TO THE DIE FUNCTION
+		//	$('#modal1').modal('open');
 
 		})
 
@@ -194,8 +192,6 @@ class Game {
 			        $("#gameScreen").append(newCaptive);
 
 
-
-
 					$(".draggable").click(( event ) => this.selectObject( event ));
 
 			        let ent = new Entity(this.world, $(newCaptive));
@@ -211,13 +207,18 @@ class Game {
 		console.log(event.offsetY);
 	}*/
 
+	dieFunction() {
+
+		// Create modal popup here when you lost the game
+					$('#modal1').modal('open');
+    // When all projectiles are used use this die function to show the modal and end the game
+}
+
 	fire() {
 		//Determine angle from the centre of the UFO (where balls are released) to mouse cursor.
 		var ufoPoint = { x: 520, y: 10 }
 		var mousePoint = { x: event.clientX - $('#gameScreen').position().left, y: event.clientY - $('#gameScreen').position().top }
 		var angleDeg = Math.atan2(mousePoint.y - ufoPoint.y, mousePoint.x - ufoPoint.x) * 180 / Math.PI;
-
-
 
 
 		//Determine difference between points using pythagorean theorem
