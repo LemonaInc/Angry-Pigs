@@ -14,6 +14,13 @@
 if (__private__ === undefined)
     var __private__ = new WeakMap();
 
+// dummy to make this file resolve without includes.
+if (Physics === undefined)
+    var Physics = {};
+
+// import Physics from 'scripts/lib/Physics.js';
+
+
 /*
  * The World Controller ES6
  */
@@ -58,31 +65,21 @@ class WorldController {
         bodyDef.position.x = screenW / 2 / WORLD_SCALE;
         bodyDef.position.y = screenH / WORLD_SCALE;           
         fixDef.shape.SetAsBox( screenW / WORLD_SCALE, 1.0 / WORLD_SCALE );
-        __m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );
+        m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );
            
     	
         // Left Edge
-//    	// The edge is positioned at the left most i.e. x = 0 and y = screenH/2 as the center. width is 1 and height = screenH
-//        bodyDef.position.x = 0; // need to add offset from screen edge based on current left attrib of game-area
-//        bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
-//        fixDef.shape.SetAsBox( 1.0 / WORLD_SCALE , screenH / WORLD_SCALE );    	
-//    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );
-//    
-//    	// Right Edge 
-//    	// same as left edge, positioned on the rightmost end of our canvas
-//    	bodyDef.position.x = screenW / WORLD_SCALE;
-//    	bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
-//    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );    	
-    	
-    	//---THIS IS FOR VISUAL TESTING ONLY
-        //setup debug Draw
-        var debugDraw = new Physics.DebugDraw;
-        debugDraw.SetSprite(document.getElementById("debugCanvas").getContext('2d'));
-        debugDraw.SetDrawScale(WORLD_SCALE);
-        debugDraw.SetFillAlpha(0.5);
-        debugDraw.SetLineThickness(1.0);
-        debugDraw.SetFlags(Physics.DebugDraw.e_shapeBit | Physics.DebugDraw.e_jointBit);
-        __m.physicsModel.SetDebugDraw(debugDraw);
+    	// The edge is positioned at the left most i.e. x = 0 and y = screenH/2 as the center. width is 1 and height = screenH
+        bodyDef.position.x = 0; // need to add offset from screen edge based on current left attrib of game-area
+        bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
+        fixDef.shape.SetAsBox( 1.0 / WORLD_SCALE , screenH / WORLD_SCALE );    	
+    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );
+    
+    	// Right Edge 
+    	// same as left edge, positioned on the rightmost end of our canvas
+    	bodyDef.position.x = screenW / WORLD_SCALE;
+    	bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
+    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );    	
     }
 
     

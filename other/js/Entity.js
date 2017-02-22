@@ -129,69 +129,26 @@ class Entity {
 	
         let __m = __private__.get( this );
         
-        let entitySwitch = this.dom$[0].className;
-        let shape, bounce, friction, mass;
-        
-        switch (entitySwitch) {
-    		case "wallBottom":
-    		    shape = "square";
-    		    bounce = 0;
-    		    friction = 3;
-    		    mass = 9.0;
-    			break;
-    		case "wallTop":
-    		    shape = "square";
-    		    bounce = 0;
-    		    friction = 3;
-    		    mass = 6.0;
-    			break;
-    		case "pillar":
-    		    shape = "square";
-    		    bounce = 0.4;
-    		    friction = 10;
-    		    mass = 5.0;
-    			break;
-    		case "tower":
-    		    shape = "square";
-    		    bounce = 0;
-    		    friction = 5;
-    		    mass = 15.0;
-    			break;
-    		case "captive":
-    		    shape = "square";
-    		    bounce = 0.5;
-    		    friction = 3;
-    		    mass = 3;
-    			break;
-    		default:
-    		    shape = "circle";
-    		    bounce = 0.7;
-    		    friction = 0;
-    		    mass = 4.0;
-    			break;
-        }
-                
         let bodyDef = new Physics.BodyDef;    
-        bodyDef.type = Physics.Body.b2_dynamicBody; //All objects will be dynamic (they move around)       
-  
+        bodyDef.type = Physics.Body.b2_dynamicBody;
+        if (staticBody) {
+        	bodyDef.type = Physics.Body.b2_staticBody;
+        }
+        
         bodyDef.position.x = __m.mX / WORLD_SCALE;
         bodyDef.position.y = __m.mY / WORLD_SCALE;
     
         let fixDef = new Physics.FixtureDef;
-
-        if(shape == "square" ) {
-            fixDef.shape = new Physics.PolygonShape;
-        	fixDef.shape.SetAsBox( __m.mWidth / WORLD_SCALE, __m.mHeight / WORLD_SCALE);
-        }
-        else if(shape == "circle") {
-        	fixDef.shape = new Physics.CircleShape(__m.mWidth / WORLD_SCALE);
-        }
+        fixDef.shape = new Physics.PolygonShape;
+        fixDef.shape.SetAsBox( __m.mWidth / WORLD_SCALE, __m.mHeight / WORLD_SCALE);
         
-        fixDef.density     = mass;
-        fixDef.friction    = friction;   // 1 = sticky, 0 = slippery
-        fixDef.restitution = bounce;     // 1 = very bouncy, 0 = almost no bounce
+        // REPLACE WITH YOUR VALUES !!!
         
-        let myWorldModel = this.world.model; 
+        fixDef.density = 4.0;      // density * area = mass 
+        fixDef.friction = 0.7;     // 1 = sticky, 0 = slippery
+        fixDef.restitution = 0.2;  // 1 = very bouncy, 0 = almost no bounce
+        
+        let myWorldModel = this.world.getModel(); 
         let aBodyModel = myWorldModel.CreateBody( bodyDef );
         
         aBodyModel.CreateFixture( fixDef );
