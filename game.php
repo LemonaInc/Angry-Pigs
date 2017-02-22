@@ -35,11 +35,28 @@
 
 		<!-- Add sounds here -->
 
-
-
 <div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 	<div class="container">
+
+		<!-- Create a modal popup div here -->
+
+		<a class="waves-effect waves-light btn" href="#modal1">Die popup</a>
+
+	   <div id="modal1" class="modal">
+	     <div class="modal-content">
+	       <h4>Sorry your alien died</h4>
+	       <p>Want to play again?</p>
+	     </div>
+	     <div class="modal-footer #1de9b6 teal accent-3">
+	       <a href="game.php" class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
+				 <a href="index.html" class=" modal-action modal-close waves-effect waves-cyan btn-flat">No</a>
+
+	     </div>
+	   </div>
+
+		<!-- End modal popup div -->
+
 
 		<!-- Back Button which goes back to index.html when clicked on -->
 		<a id="editButton"
@@ -108,7 +125,6 @@
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
 	<!-- Script for sidenav-->
-
 
 
 

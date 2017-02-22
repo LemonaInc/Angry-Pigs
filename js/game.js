@@ -50,6 +50,9 @@ class Game {
 
 			playerFireSound.play();
 
+// Create modal popup here when you lost the game 
+			$('#modal1').modal('open');
+
 		})
 
 /*		$('#gameScreen').mousemove( () => {
@@ -238,3 +241,8 @@ $(document).ready( () => {
 	let game = new Game();
 	game.run();
 })
+
+ $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
