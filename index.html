@@ -9,7 +9,7 @@
 <!-- CSS  -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<link href="/css/materialize.css" type="text/css" rel="stylesheet"
+<link href="css/materialize.css" type="text/css" rel="stylesheet"
 	media="screen,projection" />
 
 
@@ -17,15 +17,12 @@
 
 <!--Jquery Code Source-->
 <script src='https://code.jquery.com/jquery-latest.js'></script>
-
 <!-- ADDED AJAX SCRIPT -->
-
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </head>
 <body>
-
 
 	<!-- Style CSS Elements for page -->
 	<style>
@@ -35,9 +32,37 @@
 
 body {
 	margin: 0; /* Enables elements to touch sides of browser window. */
-	background-image: url('images/AliensBck.png');
-	background-size: 100%;
+	background-image: url("images/JustGradient.png");
+
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
+
+.mountains {
+    position: absolute;
+    top: 600px;
+		left: 0px;
+    background-repeat: repeat-x;
+    height: 300px;
+}
+
+.ufo {
+	  width: 250px;
+    margin: 0 auto;
+
+}
+
+.backgroundimage {
+    position: fixed;
+    top: 0px;
+		left: 0px;
+    background-repeat: repeat-x;
+    height: 300px;
+    width:200%
+}
+
 </style>
 
 
@@ -71,7 +96,6 @@ body {
 
 
 
-
 				<a
 					<class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3 z-depth-5" href="editor.php?Level=Aliens+in+the+Valley.json" >
 					<i class="tooltipped material-icons" data-position="bottom"
@@ -80,14 +104,21 @@ body {
 
 				</a>
 
+
+				<img class="responsive-img mountains" src="images/mountains.png">
+				<img class="responsive-img ufo" src="images/ufosmall.png">
+
+
 				<!-- End Navigation -->
 				<div class="section no-pad-bot" id="index-banner">
 					<div class="container">
 						<div class="row center">
-							<img width="500" height="201" src="images/logo.png" alt="logo">
+							<img width="451" height="32" src="images/logo.png" alt="logo">
 						</div>
-						<div class="container">
 
+
+
+						<div class="container">
 
 
 
@@ -132,6 +163,8 @@ Materialize.toast('Hello', 4000) // 4000 is the duration of the toast
 											<div class="section"></div>
 										</div>
 
+
+
 										<!-- End of body -->
 
 <!--  Scripts-->
@@ -174,6 +207,7 @@ $.post('server/', request)
 }
 
 </script>
+
 
 
 <script src='js/index.js'></script>
