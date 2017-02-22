@@ -4,6 +4,7 @@ class Game {
 		this.projectiles = 0;
 		this.captivesRemaining = 0;
 		this.physicsEntities = [];
+		this.winLoseDisplayed = false;
 				this.loadLevel();
 
 				// sounds
@@ -62,6 +63,16 @@ class Game {
 
 	update() {
 		this.world.update();
+		
+//		for (var i = 0; i < this.physicsEntities.length; i++) {
+//			if(this.physicsEntities[i].physicsModel.m_xf.position.x < -50) {
+//				$(this.physicsEntities[i].dom$).remove();
+//				this.world.destroy(this.physicsEntities[i].physicsModel);
+//				this.physicsEntities.splice(i, 1);
+//			}
+//		}
+		
+		
 
 		for (var i = 0; i < this.physicsEntities.length; i++) {
 			if(this.physicsEntities[i].dom$[0].className == "captive"){
@@ -76,35 +87,42 @@ class Game {
 		}
 
 		// When there are zero captives remaining display the modal popup and play the win sound
-		if(this.physicsEntities.length > 0 && this.captivesRemaining == 0) {
+		if (this.winLoseDisplayed == false) {
+			if(this.physicsEntities.length > 0 && this.captivesRemaining == 0) {
 
-			$('#modal2').modal('open');
+				$('#modal2').modal('open');
+				this.winLoseDisplayed = true;
 
-			//  create and play the winSound here
-			var winSound = new Howl({
-			 src: ['FX/EndGame.mp3'],
-			 autoplay: false,
-			 loop: false,
-			 volume: 0.5,
-			 onend: function() {
+				//  create and play the winSound here
+				var winSound = new Howl({
+				 src: ['FX/EndGame.mp3'],
+				 autoplay: false,
+				 loop: false,
+				 volume: 0.5,
+				 onend: function() {
 
-		console.log('Finished!');
+			console.log('Finished!');
+
+				}
+				});
+				
+
+	// This will only play the winSound once
+			winSound.once('load', function(){
+		  winSound.play();
+		});
 
 			}
-			});
 			
-
-// This will only play the winSound once
-		winSound.once('load', function(){
-	  winSound.play();
-	});
-
 		}
-		
-		
-		if (this.physicsEntities.length > 0 && this.projectiles <= 0) {
-			$('#modal1').modal('open');
+
+		if (this.winLoseDisplayed == false) {
+			if (this.physicsEntities.length > 0 && this.projectiles <= 0) {
+				$('#modal1').modal('open');
+				this.winLoseDisplayed = true;
+			}
 		}
+
 	}
 
 
