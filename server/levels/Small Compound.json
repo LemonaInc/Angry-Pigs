@@ -1,0 +1,128 @@
+{
+    "levelName": "Small Compound",
+    "author": "Jesse",
+    "projectiles": "60",
+    "bgImage": "..\/images\/gradient3.jpg",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "479px",
+            "yPos": "471px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "364px",
+            "yPos": "568px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_2",
+            "xPos": "823px",
+            "yPos": "566px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "436px",
+            "yPos": "368px",
+            "width": "112px",
+            "height": "78px"
+        },
+        {
+            "ID": "wallTop_1",
+            "xPos": "322px",
+            "yPos": "465px",
+            "width": "112px",
+            "height": "78px"
+        },
+        {
+            "ID": "wallTop_2",
+            "xPos": "780px",
+            "yPos": "366px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [
+        {
+            "ID": "wallBottom_0",
+            "xPos": "780px",
+            "yPos": "445px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_1",
+            "xPos": "436px",
+            "yPos": "545px",
+            "width": "112px",
+            "height": "97px"
+        }
+    ],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "865px",
+            "yPos": "544px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "322px",
+            "yPos": "546px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_2",
+            "xPos": "407px",
+            "yPos": "544px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_3",
+            "xPos": "436px",
+            "yPos": "447px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_4",
+            "xPos": "520px",
+            "yPos": "447px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_5",
+            "xPos": "781px",
+            "yPos": "543px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": [
+        {
+            "ID": "tower_0",
+            "xPos": "894px",
+            "yPos": "297px",
+            "width": "106px",
+            "height": "343px"
+        },
+        {
+            "ID": "tower_1",
+            "xPos": "29px",
+            "yPos": "300px",
+            "width": "106px",
+            "height": "343px"
+        }
+    ]
+}

@@ -6,11 +6,19 @@
 	cursor: pointer;
 }
 
-#wall {
-	width: 40px;
-	height: 70px;
-	background-image: url("../images/wallTexture.png");
+#wallBottom {
+	width: 112px;
+	height: 97px;
+	background-image: url("../images/wallBottom.png");
 	background-color: grey;
+}
+
+.wallBottom {
+	width: 112px;
+	height: 97px;
+	background-image: url("../images/wallBottom.png");
+	background-color: grey;
+	position: absolute;
 }
 
 #captive {
@@ -26,98 +34,46 @@
 	position: absolute;
 }
 
+#wallTop {
+	width: 112px;
+	height: 78px;
+	background-image: url("../images/wallTop.png");
+}
 
-.wall {
-	width: 40px;
-	height: 70px;
-	background-image: url("../images/wallTexture.png");
-	background-color: grey;
+.wallTop {
+	width: 112px;
+	height: 78px;
+	background-image: url("../images/wallTop.png");
 	position: absolute;
 }
 
-#wallBlock {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/wallBlock.png");
-
+#tower {
+	width: 106px;
+	height: 343px;
+	background-image: url("../images/tower.png");
 }
 
 
-.wallBlock {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/wallBlock.png");
+.tower {
+	width: 106px;
+	height: 343px;
+	background-image: url("../images/tower.png");
 	position: absolute;
 }
 
-
-
-#redBlock {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/redBlock.png");
-
+#pillar {
+	width: 28px;
+	height: 97px;
+	background-image: url("../images/pillar.png");
 }
 
-
-.redBlock {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/redBlock.png");
+.pillar {
+	width: 28px;
+	height: 97px;
+	background-image: url("../images/pillar.png");
 	position: absolute;
-}
-
-#cube {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/cube.png");
-
-}
-
-
-.cube {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/cube.png");
-	position: absolute;
-}
-
-
-#bannanas {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/bannanas.png");
-
-}
-
-
-.bannanas {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/bannanas.png");
-	position: absolute;
-}
-
-
-
-
-
-.Tree {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/Tree.png");
-	position: absolute;
-}
-
-
-#Tree {
-	width: 128px;
-	height: 128px;
-	background-image: url("../images/Tree.png");
-
 }
 
 .selected {
-	box-shadow: 0px 0px 25px 15px rgba(0,187,255,1);
-	background-color: rgba(0,187,255,0.97);
+	filter: drop-shadow(5px 11px 5px rgba(0,0,0,0.45)); 
 }

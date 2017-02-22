@@ -19,6 +19,13 @@
 
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/Box2dWeb-2.1.a.3.min.js"></script> <!--  TODO: Can move this to be loaded when game menu option is clicked -->
+	
+	<!-- Add Howler Library -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.core.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.spatial.min.js"></script>	
+	
 </head>
 <body>
 
@@ -26,6 +33,41 @@
 <div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 	<div class="container">
+	
+			<!-- Create a modal popup div here -->
+
+		<a class="waves-effect waves-light btn" id="popupButton" href="#modal1">Die popup</a>
+
+	   <div id="modal1" class="modal">
+	     <div class="modal-content">
+	       <h4>Sorry your alien died</h4>
+	       <p>Want to play again?</p>
+	     </div>
+	     <div class="modal-footer red">
+	       <a href="game.php" class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
+				 <a href="index.html" class=" modal-action modal-close waves-effect waves-cyan btn-flat">No</a>
+
+	     </div>
+	   </div>
+
+		<!-- End modal popup div -->
+
+
+		<a class="waves-effect waves-light btn" id="popupWinButton" href="#modal2">Win Popup</a>
+
+		 <div id="modal2" class="modal">
+			 <div class="modal-content">
+				 <h4>Congrats you won! :D </h4>
+				 <p>Want to play again?</p>
+			 </div>
+			 <div class="modal-footer #1de9b6 teal accent-3">
+				 <a href="game.php" class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
+				 <a href="index.html" class=" modal-action modal-close waves-effect waves-cyan btn-flat">No</a>
+
+			 </div>
+		 </div>
+	
+	
 
 		<!-- Back Button which goes back to index.html when clicked on -->
 		<a id="editButton"
@@ -37,41 +79,25 @@
 			class="btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3
 " href="game.php"><i
 			class="material-icons left">loop</i>Reload</a>
+			
+						<!-- Go to level editor button -->
+			<a id="goToLevelEditor"
+			class=" btn-large waves-effect waves-light #b388ff deep-purple accent-1" href="editor.php"><i
+			class="material-icons left">dashboard</i>Level Editor</a>
+			
 
 <!-- GameScreen -->
-		<div id="gameScreen">
+		<div id="gameScreen"><!--  Filled in with actual level info programmatically --></div>
 
-
-			<!--  Filled in with actual level info programmatically -->
-			<div id="title"> <!-- title will be cleared on menu selection -->
-				<h4>Castles and UFOs</h4>
-			</div>
-
-
-		</div>
-		
-
-
-		<canvas id="debugCanvas" width=1024px height=648px></canvas>
-
-		<!-- Don't think this is needed at all... TODO: Test this
-			<div id="response-one" class="the-return">
-				<div id="game-area"></div>
-			</div>
-			-->
+		<canvas id="debugCanvas" width=1024px height=648px></canvas>			
 			
-			
-				<div class="background">
-				<div class="mountains"></div>
- 				<div class="grass"></div>
+		<div class="background">
+			<div class="mountains"></div>
+ 			<div class="grass"></div>
 		</div>
 	</div>
 
-<<<<<<< HEAD
-
 	<div id="inspector">
-=======
->>>>>>> origin/NewBranch
 
 
 	</div>

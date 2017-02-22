@@ -8,10 +8,10 @@ body {
 
   background-image: url('../images/gradient4.png');
   background-repeat: repeat-x;
+  background-position: 0px -150px;
   width: 100%;
   max-width: 100%;
 }
-
 
 ul.tabBar li a:hover {background-color: #ddd; cursor: pointer;}
 ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
@@ -30,7 +30,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   	height: 100%;
   	max-width: 100%;
   	position: absolute;
-	top: 778px;
+	top: 848px;
 } 
 
 .mountains {
@@ -51,8 +51,6 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
     width:100%
 }
 
-
-
 #inspector {
   color: white;
   border-style: inherit;
@@ -65,16 +63,20 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 
 #gameScreen {
   background-image: url('images/.jpg');
-  border: solid;
-  border-color: white;
   min-width: 1024px;
   min-height: 648px;
-  /*overflow: hidden;*/
   position: relative;
   margin: 0px 0 0 0px;
   background-size: 100%;
-  top: 130px;
+  top: 200px;
   z-index: 10;
+  -webkit-user-select: none;
+}
+
+.editor {
+	overflow: hidden;
+	border: dotted;
+  	border-color: white;
 }
 
 #ufo {
@@ -107,8 +109,38 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 
 
 #reloadButton {
-position: absolute;
+position: fixed;
+top: 90px !important;
+left: 15px !important;
+
+}
+
+#goToLevelEditor {
+position: fixed;
 top: 15px !important;
 left: 250px !important;
+
+}
+
+
+#mainMenuButton {
+position: fixed;
+top: 15px !important;
+left: 200px !important;
+
+}
+
+#popupButton {
+position: fixed;
+top: 200px !important;
+left: 15px !important;
+
+}
+
+
+#popupWinButton {
+position: fixed;
+top: 400px !important;
+left: 15px !important;
 
 }

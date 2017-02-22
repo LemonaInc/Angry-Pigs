@@ -1,0 +1,58 @@
+{
+    "levelName": "New Level",
+    "author": "Jesse",
+    "projectiles": "",
+    "bgImage": "..\/images\/gradient3.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "411px",
+            "yPos": "562px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "363px",
+            "yPos": "368px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [
+        {
+            "ID": "wallBottom_0",
+            "xPos": "363px",
+            "yPos": "445px",
+            "width": "112px",
+            "height": "97px"
+        }
+    ],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "449px",
+            "yPos": "545px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "363px",
+            "yPos": "544px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": [
+        {
+            "ID": "tower_0",
+            "xPos": "661px",
+            "yPos": "306px",
+            "width": "106px",
+            "height": "343px"
+        }
+    ]
+}

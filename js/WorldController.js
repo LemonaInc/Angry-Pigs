@@ -62,17 +62,17 @@ class WorldController {
            
     	
         // Left Edge
-    	// The edge is positioned at the left most i.e. x = 0 and y = screenH/2 as the center. width is 1 and height = screenH
-        bodyDef.position.x = 0; // need to add offset from screen edge based on current left attrib of game-area
-        bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
-        fixDef.shape.SetAsBox( 1.0 / WORLD_SCALE , screenH / WORLD_SCALE );    	
-    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );
-    
-    	// Right Edge 
-    	// same as left edge, positioned on the rightmost end of our canvas
-    	bodyDef.position.x = screenW / WORLD_SCALE;
-    	bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
-    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );    	
+//    	// The edge is positioned at the left most i.e. x = 0 and y = screenH/2 as the center. width is 1 and height = screenH
+//        bodyDef.position.x = 0; // need to add offset from screen edge based on current left attrib of game-area
+//        bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
+//        fixDef.shape.SetAsBox( 1.0 / WORLD_SCALE , screenH / WORLD_SCALE );    	
+//    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );
+//    
+//    	// Right Edge 
+//    	// same as left edge, positioned on the rightmost end of our canvas
+//    	bodyDef.position.x = screenW / WORLD_SCALE;
+//    	bodyDef.position.y = screenH / 2 / WORLD_SCALE;    	
+//    	__m.physicsModel.CreateBody( bodyDef ).CreateFixture( fixDef );    	
     	
     	//---THIS IS FOR VISUAL TESTING ONLY
         //setup debug Draw

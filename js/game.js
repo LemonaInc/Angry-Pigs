@@ -1,22 +1,117 @@
 class Game {
 	constructor() {
 		this.world = new WorldController($("#gameScreen"));
+		this.captivesRemaining = 0;
 		this.physicsEntities = [];
 				this.loadLevel();
+
+				// sounds
+				// Here is where the die sound is implemented
+
+				var playerFireSound = new Howl({
+         src: ['FX/Cannon.wav'],
+				 autoplay: false,
+				loop: false,
+  			volume: 0.2,
+  			onend: function() {
+    		console.log('Finished!');
+	  }
+	});
+
+
+				var loadSound = new Howl({
+				 src: ['FX/BackgroundMusic.mp3'],
+				 autoplay: true,
+	      loop: true,
+	      volume: 0.5,
+	       onend: function() {
+
+	    console.log('Finished!');
+
+	  }
+				});
+
+				loadSound.play();
+
+       // Play the buttonClick sound
+				var buttonClick = new Howl({
+				src: ['FX/buttonClick.mp3']
+				});
+
+
+
 
 		//Create event listener for mouse
 		$('#gameScreen').click( () => {
 			this.fire();
-		})
+
+			playerFireSound.play();
+
+// Create modal popup here when you lost the game
+// MOVE THIS TO THE DIE FUNCTION
+		//	$('#modal1').modal('open');
+
+		});
+
 
 /*		$('#gameScreen').mousemove( () => {
 			this.rotateCannon();
 		})*/
-	}
 
+}	
+		
 	update() {
 		this.world.update();
-	}
+
+		for (var i = 0; i < this.physicsEntities.length; i++) {
+			if(this.physicsEntities[i].dom$[0].className == "captive"){
+				this.physicsEntities[i].applyImpulse(-90, 5);
+				//if (this.physicsEntities[i].model.m_xf.position.y < 0)
+				//	captivesRemaining--;
+			}
+		}
+
+		//if(this.physicsEntities.length > 0 && captivesRemaining == 0) {
+		    // Insert Jaxon's code here.
+		//	$('#modal1').modal('open');
+
+		    //$(".winner").show();
+		    //$(".loser").hide();
+		}
+
+
+
+
+
+
+        //apply forces to birds
+//        for (var i = this.physicsEntities.length - 1; i >= 0; i--) {
+//            if(this.physicsEntities[i].dom$[0].className == "captive"){
+//                this.physicsEntities[i].fly();
+//                this.captivesLeft++;
+//                //if(m.entities[i].model.m_xf.position.y < 0)
+//                //    birds--;
+//            }
+//        }
+//
+//
+//        if ( m.shape == "bird" ){
+//
+//            //makes birds fly upwards
+//            m.body.ApplyForce(new b2Vec2(0,-600), m.body.GetWorldCenter());
+//
+//            //releases birds for win state
+//            if (posY <= 0 && m.free == false){
+//
+//                m.free = true;
+//
+//                //Adjusts score UI
+//                scoreCount = scoreCount + 1000;
+//                $("#gameUiScore").html(scoreCount);
+//                $("#gameUiBirdCount").html(--birdCount);
+//
+//            }
+//        }
 
 	render() {
 		let m = __private__.get( this );
@@ -51,78 +146,131 @@ class Game {
 				this.world = new WorldController($("#gameScreen"));
 	            this.physicsEntities = [];
 
+	            // UFO animates in
 				$('#gameScreen').prepend(`<div id="ufo"></div>`);
 	            $('#ufo').animate({
 	            	margin: "-90px 0 0 240px"
 	            }, 1500);
 
-
 				// Turn levelDataStr into a JS object.
 				let levelDataObj = JSON.parse( levelDataStr );
 
-				// TO-DO: Change background image
-				//let $newImage = `url("${levelDataObj.bgImage}")`;
-				//var newImageFixed = $newImage.replace( /\.{2,}/, ''); //http://stackoverflow.com/questions/10003683/javascript-get-number-from-string
-				//$("#gameScreen").css({ "background-image" : $newImage }); <--- Why does it not see /angryBirds/ in the link????
+				// Change background image based on .json file.
+				let $newImage = `url('${levelDataObj.bgImage}')`;
+				$('body').css("background-image", $newImage);
 
-				// Castle Pieces
-				for (let i = 0; i < levelDataObj.castlePieces.length; i++) {
-					var newCastlePiece = document.createElement("div");
-					$(newCastlePiece).addClass("draggable wall");
+				// Wall Bottoms
+				for (let i = 0; i < levelDataObj.wallBottoms.length; i++) {
+					var newWallBottom = document.createElement("div");
+					$(newWallBottom).addClass("wallBottom");
 
-					$(newCastlePiece).attr('id', "castlePiece_" + i);
+					$(newWallBottom).attr('id', "wallBottom_" + i);
 
-					levelDataObj.castlePieces[i] = {
-							"ID"	 : "castlePiece_" + i,
-							"xPos"   : levelDataObj.castlePieces[i].xPos,
-							"yPos"   : levelDataObj.castlePieces[i].yPos,
-							"width"  : levelDataObj.castlePieces[i].width,
-							"height" : levelDataObj.castlePieces[i].height
+					levelDataObj.wallBottoms[i] = {
+							"ID"	 : "wallBottom_" + i,
+							"xPos"   : levelDataObj.wallBottoms[i].xPos,
+							"yPos"   : levelDataObj.wallBottoms[i].yPos,
+							"width"  : levelDataObj.wallBottoms[i].width,
+							"height" : levelDataObj.wallBottoms[i].height
 					};
 
-					$(newCastlePiece).css({ height: levelDataObj.castlePieces[i].height,
-									 width: levelDataObj.castlePieces[i].width,
-									  left: levelDataObj.castlePieces[i].xPos,
-									   top: levelDataObj.castlePieces[i].yPos
+					$(newWallBottom).css({ height: levelDataObj.wallBottoms[i].height,
+									 width: levelDataObj.wallBottoms[i].width,
+									  left: levelDataObj.wallBottoms[i].xPos,
+									   top: levelDataObj.wallBottoms[i].yPos
 					});
 
-			        $("#gameScreen").append(newCastlePiece);
+			        $("#gameScreen").append(newWallBottom);
 
-			        let ent = new Entity(this.world, $(newCastlePiece));
+			        let ent = new Entity(this.world, $(newWallBottom));
 			        this.physicsEntities.push(ent);
-			        /*ent.applyForce(300, 30000);*/
 				}
 
+				// Wall Tops
+				for (let i = 0; i < levelDataObj.wallTops.length; i++) {
+					var newWallTop = document.createElement("div");
+					$(newWallTop).addClass("wallTop");
 
+					$(newWallTop).attr('id', "wallTop_" + i);
 
-				// WallBlocks
-				/* for (let i = 0; i < levelDataObj.wallBlocks.length; i++) {
-					var newCastlePiece = document.createElement("div");
-					$(newWallBlock).addClass("draggable wall");
-					$(newWallBlock).attr('id', "wallBlock_" + i);
-					this.entityList.wallBlocks[i] = {
-							"ID"	 : "castlePiece_" + i,
-							"xPos"   : levelDataObj.wallBlocks[i].xPos,
-							"yPos"   : levelDataObj.wallBlocks[i].yPos,
-							"width"  : levelDataObj.wallBlocks[i].width,
-							"height" : levelDataObj.wallBlocks[i].height
+					levelDataObj.wallBottoms[i] = {
+							"ID"	 : "wallTop_" + i,
+							"xPos"   : levelDataObj.wallTops[i].xPos,
+							"yPos"   : levelDataObj.wallTops[i].yPos,
+							"width"  : levelDataObj.wallTops[i].width,
+							"height" : levelDataObj.wallTops[i].height
 					};
-					$(newCastlePiece).css({ height: levelDataObj.wallBlocks[i].height,
-									 width: levelDataObj.wallBlocks[i].width,
-										left: levelDataObj.wallBlocks[i].xPos,
-										 top: levelDataObj.wallBlocks[i].yPos
+
+					$(newWallTop).css({ height: levelDataObj.wallTops[i].height,
+									 	 width: levelDataObj.wallTops[i].width,
+									 	  left: levelDataObj.wallTops[i].xPos,
+									 	   top: levelDataObj.wallTops[i].yPos
 					});
-							$("#gameScreen").append(newWallBlock);
-					        let ent = new Entity(this.world, $(newCastlePiece));
-					        this.physicsEntities.push(ent);
-				}*/
 
+			        $("#gameScreen").append(newWallTop);
 
+			        let ent = new Entity(this.world, $(newWallTop));
+			        this.physicsEntities.push(ent);
+				}
+
+				// Towers
+				for (let i = 0; i < levelDataObj.towers.length; i++) {
+					var newTower = document.createElement("div");
+					$(newTower).addClass("tower");
+
+					$(newTower).attr('id', "tower_" + i);
+
+					levelDataObj.towers[i] = {
+							"ID"	 : "tower_" + i,
+							"xPos"   : levelDataObj.towers[i].xPos,
+							"yPos"   : levelDataObj.towers[i].yPos,
+							"width"  : levelDataObj.towers[i].width,
+							"height" : levelDataObj.towers[i].height
+					};
+
+					$(newTower).css({ height: levelDataObj.towers[i].height,
+									   width: levelDataObj.towers[i].width,
+									    left: levelDataObj.towers[i].xPos,
+									 	 top: levelDataObj.towers[i].yPos
+					});
+
+			        $("#gameScreen").append(newTower);
+
+			        let ent = new Entity(this.world, $(newTower));
+			        this.physicsEntities.push(ent);
+				}
+
+				// Pillars
+				for (let i = 0; i < levelDataObj.pillars.length; i++) {
+					var newPillar = document.createElement("div");
+					$(newPillar).addClass("pillar");
+
+					$(newPillar).attr('id', "pillar_" + i);
+
+					levelDataObj.pillars[i] = {
+							"ID"	 : "tower_" + i,
+							"xPos"   : levelDataObj.pillars[i].xPos,
+							"yPos"   : levelDataObj.pillars[i].yPos,
+							"width"  : levelDataObj.pillars[i].width,
+							"height" : levelDataObj.pillars[i].height
+					};
+
+					$(newPillar).css({ height: levelDataObj.pillars[i].height,
+									    width: levelDataObj.pillars[i].width,
+									     left: levelDataObj.pillars[i].xPos,
+									 	  top: levelDataObj.pillars[i].yPos
+					});
+
+			        $("#gameScreen").append(newPillar);
+
+			        let ent = new Entity(this.world, $(newPillar));
+			        this.physicsEntities.push(ent);
+				}
 
 				// Captives
 				for (let i = 0; i < levelDataObj.captives.length; i++) {
 					var newCaptive = document.createElement("div");
-					$(newCaptive).addClass("draggable captive");
+					$(newCaptive).addClass("captive");
 					$(newCaptive).attr('id', "captive_" + i);
 
 					levelDataObj.captives[i] = {
@@ -141,10 +289,10 @@ class Game {
 
 			        $("#gameScreen").append(newCaptive);
 
-					$(".draggable").click(( event ) => this.selectObject( event ));
-
 			        let ent = new Entity(this.world, $(newCaptive));
 			        this.physicsEntities.push(ent);
+
+			        //captivesRemaining++;
 				}
 			})
 	}
@@ -159,7 +307,7 @@ class Game {
 		var ufoPoint = { x: 520, y: 10 }
 		var mousePoint = { x: event.clientX - $('#gameScreen').position().left, y: event.clientY - $('#gameScreen').position().top }
 		var angleDeg = Math.atan2(mousePoint.y - ufoPoint.y, mousePoint.x - ufoPoint.x) * 180 / Math.PI;
-		
+
 		//Determine difference between points using pythagorean theorem
 		var a = ufoPoint.x - mousePoint.x
 		var b = ufoPoint.y - mousePoint.y
@@ -169,7 +317,7 @@ class Game {
 		var energyBall = document.createElement("div");
 		$(energyBall).addClass("energyBall");
 		$('#gameScreen').append(energyBall);
-		
+
 		//Create energyball in physics, apply force.
 		let ent = new Entity(this.world, $(energyBall));
 		this.physicsEntities.push(ent);
@@ -181,4 +329,6 @@ class Game {
 $(document).ready( () => {
 	let game = new Game();
 	game.run();
+
+	$('.modal').modal();
 })

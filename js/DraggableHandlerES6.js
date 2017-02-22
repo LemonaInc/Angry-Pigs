@@ -49,6 +49,10 @@ class DraggableHandler {
     			left: event.target.offsetLeft,
     			top: event.target.offsetTop
     		};
+    		
+    		// Deselect other items in #gameScreen and select object that is current being pressed down on.
+    		$('#gameScreen .selected').removeClass('selected');
+    		$(event.target).addClass('selected');
 
     		this.offsetX = event.clientX - Math.floor( event.target.offsetLeft ); //event.target is the DIV that was clicked on
     		this.offsetY = event.clientY - Math.floor( event.target.offsetTop );
@@ -63,47 +67,41 @@ class DraggableHandler {
 
     	if (this.mouseDown && this.mouseOver && this._draggable$ != null) {
 
-    		// Get the ID that corresponds to the array index number of the object.
-    		// I probably can just shorten the ID of all objects in the game to the
-    		// number they have in order they were created.  No real need for a
-    		// distinction between castlePieces and captives at an HTML level.
-    		var idExtracted = event.target.id.replace( /^\D+/g, ''); //http://stackoverflow.com/questions/10003683/javascript-get-number-from-string
+    		// Get the ID that corresponds to the array index number of the object, strips the text away.
+    		// From:  http://stackoverflow.com/questions/10003683/javascript-get-number-from-string
+    		var idExtracted = event.target.id.replace( /^\D+/g, ''); 
 
     		// Change css of object
     		this._draggable$.css({ margin: "0px",
     		                       left: event.clientX - this.offsetX + "px",
     		                       top:  event.clientY - this.offsetY + "px"
-		                        });
-
+		                         });
 
     		// Write new position to entityList
-        //wall
-    		if ( $(event.target).hasClass("wall") ){
-    			this.entityListRef.castlePieces[idExtracted].xPos = event.clientX - this.offsetX + "px";
-        		this.entityListRef.castlePieces[idExtracted].yPos = event.clientY - this.offsetY + "px";
+    		if ( $(event.target).hasClass("wallBottom") ){
+    			this.entityListRef.wallBottoms[idExtracted].xPos = event.clientX - this.offsetX + "px";
+        		this.entityListRef.wallBottoms[idExtracted].yPos = event.clientY - this.offsetY + "px";
+    		}
+    		
+    		else if ( $(event.target).hasClass("wallTop") ){
+    			this.entityListRef.wallTops[idExtracted].xPos = event.clientX - this.offsetX + "px";
+        		this.entityListRef.wallTops[idExtracted].yPos = event.clientY - this.offsetY + "px";
     		}
 
-        // captives
+    		else if ( $(event.target).hasClass("tower") ){
+    			this.entityListRef.towers[idExtracted].xPos = event.clientX - this.offsetX + "px";
+        		this.entityListRef.towers[idExtracted].yPos = event.clientY - this.offsetY + "px";
+    		}
+    		
+    		else if ( $(event.target).hasClass("pillar") ){
+    			this.entityListRef.pillars[idExtracted].xPos = event.clientX - this.offsetX + "px";
+        		this.entityListRef.pillars[idExtracted].yPos = event.clientY - this.offsetY + "px";
+    		}
+    		
     		else if ( $(event.target).hasClass("captive") ){
     			this.entityListRef.captives[idExtracted].xPos = event.clientX - this.offsetX + "px";
         		this.entityListRef.captives[idExtracted].yPos = event.clientY - this.offsetY + "px";
     		}
-
-
-        // wallBlocks
-        else if ( $(event.target).hasClass("wallBlock") ){
-          this.entityListRef.wallBlocks[idExtracted].xPos = event.clientX - this.offsetX + "px";
-            this.entityListRef.wallBlocks[idExtracted].yPos = event.clientY - this.offsetY + "px";
-        }
-
-        // Trees
-        else if ( $(event.target).hasClass("Tree") ){
-          this.entityListRef.trees[idExtracted].xPos = event.clientX - this.offsetX + "px";
-            this.entityListRef.trees[idExtracted].yPos = event.clientY - this.offsetY + "px";
-        }
-
-
-
     	};
     }
 
@@ -143,5 +141,8 @@ class DraggableHandler {
     		this._draggable$.css( { cursor:"pointer", zindex: this.zIndex } );
             this.zIndex = DEFAULT_Z;
     	}
+    	
+    	//Deselect all objects on mouse release
+		$('#gameScreen .selected').removeClass('selected');
     }
 }
