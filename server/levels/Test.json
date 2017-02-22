@@ -1,0 +1,58 @@
+{
+    "levelName": "Test",
+    "author": "Jesse",
+    "projectiles": "666",
+    "bgImage": "..\/images\/Field.jpg",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "587px",
+            "yPos": "304px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "399px",
+            "yPos": "170px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [
+        {
+            "ID": "wallBottom_0",
+            "xPos": "524px",
+            "yPos": "529px",
+            "width": "112px",
+            "height": "97px"
+        }
+    ],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "317px",
+            "yPos": "191px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "560px",
+            "yPos": "152px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": [
+        {
+            "ID": "tower_0",
+            "xPos": "746px",
+            "yPos": "268px",
+            "width": "106px",
+            "height": "343px"
+        }
+    ]
+}
