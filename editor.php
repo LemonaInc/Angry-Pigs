@@ -66,6 +66,7 @@
 
 				onclick="openTab(event, 'objectList')">Objects</a></li>
 
+
 			<li><div class="userView">
 
 
@@ -99,7 +100,7 @@
 						<!-- End of this form -->
 						<div class="container">
 						<form class="loadLevelForm" accept-charset="utf-8">
-							<h5>Load a level</h5>
+							<h5>Level</h5>
 
 
 							<select id="levelSelectDropdown" class='dropdown-button btn cyan' name="Level">
