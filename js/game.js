@@ -68,7 +68,7 @@ class Game {
 				if (this.physicsEntities[i].physicsModel.m_xf.position.y < 0) {
 						$(this.physicsEntities[i].dom$).remove();
 						this.world.destroy(this.physicsEntities[i].physicsModel);
-						this.physicsEntities.splice(i);
+						this.physicsEntities.splice(i, 1);
 						this.captivesRemaining--;
 
 						console.log(this.captivesRemaining);
