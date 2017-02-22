@@ -44,14 +44,13 @@
 	       <p>Want to play again?</p>
 	     </div>
 	     <div class="modal-footer red">
-	       <a href="game.php" class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
+	       <a onClick="history.go(0)" value="Refresh" class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
 				 <a href="index.html" class=" modal-action modal-close waves-effect waves-cyan btn-flat">No</a>
 
 	     </div>
 	   </div>
 
 		<!-- End modal popup div -->
-
 
 		<a class="waves-effect waves-light btn" id="popupWinButton" href="#modal2">Win Popup</a>
 
@@ -61,7 +60,7 @@
 				 <p>Want to play again?</p>
 			 </div>
 			 <div class="modal-footer #1de9b6 teal accent-3">
-				 <a href="game.php" class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
+				 <a onClick="history.go(0)" value="Refresh"  class=" modal-action modal-close waves-effect waves-cyan btn-flat">Yes</a>
 				 <a href="index.html" class=" modal-action modal-close waves-effect waves-cyan btn-flat">No</a>
 
 			 </div>
@@ -70,8 +69,6 @@
 
 
 		<!-- Back Button which goes back to index.html when clicked on -->
-
-
 
 
 			<a id="editButton" class="btn tooltipped btn-large waves-light #ffd54f amber lighten-2"
@@ -88,9 +85,6 @@
 			<a id="goToLevelEditor" class="btn tooltipped btn-large waves-light #b388ff deep-purple accent-1"
 				href="editor.php" data-position="bottom" data-delay="50"
 				data-tooltip="Go to level editor"><i class="material-icons left">dashboard</i>Level Editor</a>
-
-
-
 
 
 

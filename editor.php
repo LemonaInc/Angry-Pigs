@@ -63,41 +63,15 @@
 			<li><a href="javscript:void(0)"
 				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan"
 				onclick="openTab(event, 'objectList')">Objects</a></li>
-			<li><a href="javscript:void(0)"
-				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan"
-				onclick="openTab(event, 'objectProperties')">Properties</a></li>
+
+			
+
 			<li><div class="userView">
 					<div class="background">
 						<img src="images/longbackground.png">
 					</div>
 
-					<div id="objectProperties" class="tabContent">
-						<form class="objectPropertiesForm" accept-charset="utf-8">
-							<h4>Position</h4>
-							<input type="text" name="xPos" value=""
-								class="#424242 grey darken-3" placeholder="X Position" /><br> <input
-								type="text" name="yPos" value="" class="#424242 grey darken-3"
-								placeholder="Y Position" />
-							<h4>Size</h4>
-							<input type="text" name="width" value=""
-								class="#424242 grey darken-3" placeholder="Width" /><br> <input
-								type="text" name="height" value="" class="#424242 grey darken-3"
-								placeholder="Height" />
-							<h5>Physics Properties</h5>
-							<input type="text" name="bounce" value=""
-								class="#424242 grey darken-3" placeholder="Bounce" /><br> <input
-								type="text" name="mass" value="" class="#424242 grey darken-3"
-								placeholder="Mass" /><br> <input type="text" name="friction"
-								class="waves-light #424242 grey darken-3" value=""
-								placeholder="Friction" />
-							<h4>Texture</h4>
-							texture: <input type="text" name="texture" value=""
-								class="#424242 grey darken-3" placeholder="URL of texture" /> <input
-								type="submit"
-								class="btn-large waves-effect waves-light #424242 grey darken-3"
-								name="action" value="submit" />
-						</form>
-					</div>
+
 
 					<div id="levelEditor" class="tabContent">
 						<form class="saveLevelForm" accept-charset="utf-8">
