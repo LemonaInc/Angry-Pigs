@@ -50,7 +50,8 @@ class Game {
 
 			playerFireSound.play();
 
-// Create modal popup here when you lost the game 
+// Create modal popup here when you lost the game
+// MOVE THIS TO THE DIE FUNCTION 
 			$('#modal1').modal('open');
 
 		})
