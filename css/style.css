@@ -62,6 +62,22 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   float: left;
 }
 
+
+#gameEditorScreen {
+  background-image: url('images/.jpg');
+  border: solid;
+  border-color: white;
+  min-width: 1024px;
+  min-height: 648px;
+  /*overflow: hidden;*/
+  position: relative;
+  margin: 0px 0 0 0px;
+  background-size: 100%;
+  top: 130px;
+  z-index: 10;
+}
+
+
 #gameScreen {
   background-image: url('images/.jpg');
   border:

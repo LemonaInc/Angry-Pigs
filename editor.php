@@ -26,7 +26,7 @@
 		<!-- Set Background of Level editor -->
 		<a id="editButton" href="#" name="slide-out" data-activates="slide-out"
 			class="button-collapse btn-large waves-effect waves-light #00bcd4 cyan">Edit Level</a>
-		<div id="gameScreen">
+		<div id="gameEditorScreen">
 			<!--  Filled in with actual level info programmatically -->
 			<div id="title"> <!-- title will be cleared on menu selection -->
 				<h4>Castles and UFOs</h4>
