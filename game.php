@@ -81,13 +81,14 @@
       <!-- Reload Level Button which reloads the game.php scene -->
 
 			<a id="reloadButton" class="btn tooltipped btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3"
-				href="game.php" data-position="bottom" data-delay="50"
+				onClick="history.go(0)" value="Refresh" data-position="bottom" data-delay="50"
 				data-tooltip="Reload Level"><i class="material-icons left">loop</i>reload</a>
 
       <!-- Go to level editor button -->
 			<a id="goToLevelEditor" class="btn tooltipped btn-large waves-light #b388ff deep-purple accent-1"
 				href="editor.php" data-position="bottom" data-delay="50"
 				data-tooltip="Go to level editor"><i class="material-icons left">dashboard</i>Level Editor</a>
+
 
 
 
