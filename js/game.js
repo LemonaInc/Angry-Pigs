@@ -66,52 +66,21 @@ class Game {
 		for (var i = 0; i < this.physicsEntities.length; i++) {
 			if(this.physicsEntities[i].dom$[0].className == "captive"){
 				this.physicsEntities[i].applyImpulse(-90, 5);
-				//if (this.physicsEntities[i].model.m_xf.position.y < 0)
-				//	captivesRemaining--;
+				if (this.physicsEntities[i].physicsModel.m_xf.position.y < 0) {
+						$(this.physicsEntities[i].dom$).remove();
+						this.world.destroy(this.physicsEntities[i].physicsModel);
+						this.physicsEntities.splice(i);						
+						this.captivesRemaining--;
+
+						console.log(this.captivesRemaining);
+				}
 			}
 		}
 
-		//if(this.physicsEntities.length > 0 && captivesRemaining == 0) {
-		    // Insert Jaxon's code here.
-		//	$('#modal1').modal('open');
-
-		    //$(".winner").show();
-		    //$(".loser").hide();
+		if(this.physicsEntities.length > 0 && this.captivesRemaining == 0) {
+			$('#modal2').modal('open');
 		}
-
-
-
-
-
-
-        //apply forces to birds
-//        for (var i = this.physicsEntities.length - 1; i >= 0; i--) {
-//            if(this.physicsEntities[i].dom$[0].className == "captive"){
-//                this.physicsEntities[i].fly();
-//                this.captivesLeft++;
-//                //if(m.entities[i].model.m_xf.position.y < 0)
-//                //    birds--;
-//            }
-//        }
-//
-//
-//        if ( m.shape == "bird" ){
-//
-//            //makes birds fly upwards
-//            m.body.ApplyForce(new b2Vec2(0,-600), m.body.GetWorldCenter());
-//
-//            //releases birds for win state
-//            if (posY <= 0 && m.free == false){
-//
-//                m.free = true;
-//
-//                //Adjusts score UI
-//                scoreCount = scoreCount + 1000;
-//                $("#gameUiScore").html(scoreCount);
-//                $("#gameUiBirdCount").html(--birdCount);
-//
-//            }
-//        }
+	}
 
 	render() {
 		let m = __private__.get( this );
@@ -292,7 +261,8 @@ class Game {
 			        let ent = new Entity(this.world, $(newCaptive));
 			        this.physicsEntities.push(ent);
 
-			        //captivesRemaining++;
+			        this.captivesRemaining++;
+			        console.log(this.captivesRemaining);
 				}
 			})
 	}

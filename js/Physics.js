@@ -28,6 +28,7 @@ const Physics = {
     Fixture:        Box2D.Dynamics.b2Fixture,
     
     Listener:       Box2D.Dynamics.b2ContactListener,
+    Destroy:		Box2D.Dynamics.b2DestructionListener,
     
     MouseJointDef:  Box2D.Dynamics.Joints.b2MouseJointDef,
     MassData:       Box2D.Collision.Shapes.b2MassData,

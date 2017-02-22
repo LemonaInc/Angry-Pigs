@@ -29,7 +29,8 @@ class WorldController {
         let __m = {
             // Create the Box2D World with horizontal and vertical gravity vector(10 is close enough to 9.8)
             physicsModel: new Physics.World( new Physics.Vec2(0, GRAVITY ) ,true ), //allow sleep
-            listener:     new Physics.Listener
+            listener:     new Physics.Listener,
+            destroyer:	  new Physics.Destroy
         };
         __private__.set( this, __m )        
         
@@ -99,6 +100,14 @@ class WorldController {
         let __m = __private__.get( this );
         __m.physicsModel.Step( FRAME_RATE, VELOCITY_ITER, POSITION_ITER );
     }	
+    
+    destroy( what ) {
+    	let __m = __private__.get( this );
+    	
+    	__m.physicsModel.DestroyBody( what )
+    	
+    }
+    
 
     	
     render() { }
