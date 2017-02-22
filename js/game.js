@@ -28,17 +28,16 @@ class Game {
 
 	    console.log('Finished!');
 
-	  }
+	  		}
 				});
 
+				// Play the load sound here
 				loadSound.play();
 
        // Play the buttonClick sound
 				var buttonClick = new Howl({
 				src: ['FX/buttonClick.mp3']
 				});
-
-
 
 
 		//Create event listener for mouse
@@ -58,8 +57,8 @@ class Game {
 			this.rotateCannon();
 		})*/
 
-}	
-		
+}
+
 	update() {
 		this.world.update();
 
@@ -69,7 +68,7 @@ class Game {
 				if (this.physicsEntities[i].physicsModel.m_xf.position.y < 0) {
 						$(this.physicsEntities[i].dom$).remove();
 						this.world.destroy(this.physicsEntities[i].physicsModel);
-						this.physicsEntities.splice(i);						
+						this.physicsEntities.splice(i);
 						this.captivesRemaining--;
 
 						console.log(this.captivesRemaining);
@@ -77,10 +76,32 @@ class Game {
 			}
 		}
 
+		// When there are zero captives remaining display the modal popup and play the win sound
 		if(this.physicsEntities.length > 0 && this.captivesRemaining == 0) {
+
 			$('#modal2').modal('open');
+
+			//  create and play the winSound here
+			var winSound = new Howl({
+			 src: ['FX/EndGame.mp3'],
+			 autoplay: false,
+			 loop: false,
+			 volume: 0.5,
+			 onend: function() {
+
+		console.log('Finished!');
+
+			}
+			});
+
+// This will only play the winSound once
+		winSound.once('load', function(){
+	  winSound.play();
+	});
+
 		}
 	}
+
 
 	render() {
 		let m = __private__.get( this );
