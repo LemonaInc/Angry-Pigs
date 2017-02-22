@@ -10,12 +10,28 @@ class Game {
 
 
 				var playerFireSound = new Howl({
-         src: ['FX/Cannon.wav']
+         src: ['FX/Cannon.wav'],
+				 autoplay: false,
+				loop: false,
+  			volume: 0.2,
+  			onend: function() {
+    		console.log('Finished!');
+	  }
+
+
+
+
         });
 
 
 				var loadSound = new Howl({
-				 src: ['FX/UFO.mp3']
+				 src: ['FX/BackgroundMusic.mp3'],
+				 autoplay: true,
+	      loop: true,
+	      volume: 0.5,
+	       onend: function() {
+	    console.log('Finished!');
+	  }
 				});
 
 				loadSound.play();
