@@ -4,14 +4,36 @@ class Game {
 		this.physicsEntities = [];
 				this.loadLevel();
 
+
+				// sounds
+				// Here is where the die sound is implemented
+
+
+				var playerFireSound = new Howl({
+         src: ['FX/Cannon.wav']
+        });
+
+
+				var loadSound = new Howl({
+				 src: ['FX/UFO.mp3']
+				});
+
+				loadSound.play();
+
+
 		//Create event listener for mouse
 		$('#gameScreen').click( () => {
 			this.fire();
+
+			playerFireSound.play();
+
 		})
 
 /*		$('#gameScreen').mousemove( () => {
 			this.rotateCannon();
 		})*/
+
+
 	}
 
 	update() {
@@ -119,6 +141,9 @@ class Game {
 
 
 
+
+
+
 				// Captives
 				for (let i = 0; i < levelDataObj.captives.length; i++) {
 					var newCaptive = document.createElement("div");
@@ -159,7 +184,10 @@ class Game {
 		var ufoPoint = { x: 520, y: 10 }
 		var mousePoint = { x: event.clientX - $('#gameScreen').position().left, y: event.clientY - $('#gameScreen').position().top }
 		var angleDeg = Math.atan2(mousePoint.y - ufoPoint.y, mousePoint.x - ufoPoint.x) * 180 / Math.PI;
-		
+
+
+
+
 		//Determine difference between points using pythagorean theorem
 		var a = ufoPoint.x - mousePoint.x
 		var b = ufoPoint.y - mousePoint.y
@@ -169,7 +197,7 @@ class Game {
 		var energyBall = document.createElement("div");
 		$(energyBall).addClass("energyBall");
 		$('#gameScreen').append(energyBall);
-		
+
 		//Create energyball in physics, apply force.
 		let ent = new Entity(this.world, $(energyBall));
 		this.physicsEntities.push(ent);

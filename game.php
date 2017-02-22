@@ -23,6 +23,20 @@
 <body>
 
 
+
+
+	<!-- Add Howler Library -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.core.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.spatial.min.js"></script>
+
+
+
+		<!-- Add sounds here -->
+
+
+
 <div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 	<div class="container">
@@ -31,6 +45,8 @@
 		<a id="editButton"
 			class="waves-effect waves-light btn-large #ffd54f amber lighten-2" href="index.html"><i
 			class="material-icons left">reorder</i>Main Menu</a>
+
+			<script> buttonClick.play(); </script>
 
 <!-- Reload Level Button which reloads the game.php scene -->
 			<a id="reloadButton"
@@ -92,6 +108,8 @@
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
 	<!-- Script for sidenav-->
+
+
 
 
 	<script src="js/game.js"></script>
