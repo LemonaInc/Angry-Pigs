@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/objects.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<link href="materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
 <link href="style.css" type="text/css" rel="stylesheet"	media="screen,projection" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -39,29 +39,29 @@
 		<div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 		<canvas id="debugCanvas" width=1024px height=648px></canvas>
-		
+
 		<div class="background">
 				<div class="mountains"></div>
  				<div class="grass"></div>
 		</div>
-		
+
 	</div>
 
 	<div id="inspector"> <!-- Slide out Navbar -->
 		<ul id="slide-out" class="side-nav #424242 grey darken-3">
-			<li><a href="javscript:void(0)" 
+			<li><a href="javscript:void(0)"
 				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan z-depth-5"
 				onclick="openTab(event, 'levelEditor')">Level</a></li>
 			<li><a href="javscript:void(0)"
 				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan z-depth-5"
 				onclick="openTab(event, 'objectList')">Objects</a></li>
 			<li><div class="userView">
-					
-					
+
+
 					<div id="levelEditor" class="tabContent">
 						<form class="saveLevelForm" accept-charset="utf-8">
 							<h5>Save</h5>
-							
+
 							Level: <input type="text" name="levelName" value=""
 								class="#424242 grey darken-3" placeholder="Level Name" />
 							Author: <input type="text" name="author" value=""
@@ -98,7 +98,7 @@
 					</div>
 
 				</div>
-		
+
 		</ul>
 	</div>
 
@@ -112,7 +112,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
-	
+
 	<!-- Script for sidenav-->
 	<script>
 		<!-- Initialize collapse button -->
