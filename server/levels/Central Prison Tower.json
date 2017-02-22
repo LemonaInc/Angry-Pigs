@@ -1,13 +1,13 @@
 {
-    "levelName": "New Level",
+    "levelName": "Central Prison Tower",
     "author": "Jesse",
-    "projectiles": "",
-    "bgImage": "..\/images\/gradient3.png",
+    "projectiles": "60",
+    "bgImage": "gradient4.png",
     "captives": [
         {
             "ID": "captive_0",
-            "xPos": "411px",
-            "yPos": "562px",
+            "xPos": "487px",
+            "yPos": "464px",
             "width": "28px",
             "height": "73px"
         }
@@ -15,8 +15,8 @@
     "wallTops": [
         {
             "ID": "wallTop_0",
-            "xPos": "363px",
-            "yPos": "368px",
+            "xPos": "441px",
+            "yPos": "270px",
             "width": "112px",
             "height": "78px"
         }
@@ -24,8 +24,15 @@
     "wallBottoms": [
         {
             "ID": "wallBottom_0",
-            "xPos": "363px",
-            "yPos": "445px",
+            "xPos": "442px",
+            "yPos": "544px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_1",
+            "xPos": "441px",
+            "yPos": "348px",
             "width": "112px",
             "height": "97px"
         }
@@ -33,15 +40,15 @@
     "pillars": [
         {
             "ID": "pillar_0",
-            "xPos": "449px",
-            "yPos": "545px",
+            "xPos": "526px",
+            "yPos": "446px",
             "width": "28px",
             "height": "97px"
         },
         {
             "ID": "pillar_1",
-            "xPos": "363px",
-            "yPos": "544px",
+            "xPos": "441px",
+            "yPos": "447px",
             "width": "28px",
             "height": "97px"
         }
@@ -49,8 +56,15 @@
     "towers": [
         {
             "ID": "tower_0",
-            "xPos": "661px",
-            "yPos": "306px",
+            "xPos": "779px",
+            "yPos": "296px",
+            "width": "106px",
+            "height": "343px"
+        },
+        {
+            "ID": "tower_1",
+            "xPos": "126px",
+            "yPos": "296px",
             "width": "106px",
             "height": "343px"
         }

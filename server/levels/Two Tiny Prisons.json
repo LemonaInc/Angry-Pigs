@@ -1,0 +1,70 @@
+{
+    "levelName": "Two Tiny Prisons",
+    "author": "Jesse",
+    "projectiles": "60",
+    "bgImage": "gradient2.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "915px",
+            "yPos": "564px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "79px",
+            "yPos": "566px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "871px",
+            "yPos": "468px",
+            "width": "112px",
+            "height": "78px"
+        },
+        {
+            "ID": "wallTop_1",
+            "xPos": "35px",
+            "yPos": "468px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "871px",
+            "yPos": "546px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "955px",
+            "yPos": "546px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_2",
+            "xPos": "119px",
+            "yPos": "545px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_3",
+            "xPos": "35px",
+            "yPos": "546px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": []
+}

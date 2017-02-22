@@ -181,6 +181,10 @@ class App{
 
 				// Turn levelDataStr into a JS object.
 				let levelDataObj = JSON.parse( levelDataStr );
+				
+				// Change background image based on .json file.
+				let $newImage = `url('images/${levelDataObj.bgImage}')`;
+				$('body').css("background-image", $newImage);
 
 				// Wall Bottoms
 				for (let i = 0; i < levelDataObj.wallBottoms.length; i++) {

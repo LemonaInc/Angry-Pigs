@@ -71,7 +71,7 @@
 							Projectiles: <input type="text" name="projectiles" value=""
 								class="#424242 grey darken-3"
 								placeholder="Amount of projectiles" /> Background Image: <input
-								type="text" name="bgImage" value="../images/Field.jpg"
+								type="text" name="bgImage" value="gradient1.png"
 								class="#424242 grey darken-3" /> <input type="submit"
 								class="btn-large waves-effect waves-light  cyan"
 								name="action" value="save" />

@@ -146,7 +146,7 @@ class Game {
 				let levelDataObj = JSON.parse( levelDataStr );
 
 				// Change background image based on .json file.
-				let $newImage = `url('${levelDataObj.bgImage}')`;
+				let $newImage = `url('images/${levelDataObj.bgImage}')`;
 				$('body').css("background-image", $newImage);
 
 				// Wall Bottoms
