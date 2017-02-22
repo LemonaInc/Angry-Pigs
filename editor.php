@@ -27,9 +27,8 @@
 			data-activates="slide-out"
 
 
-			class="btn tooltipped button-collapse btn-large waves-effect waves-light #00bcd4 cyan" data-position="bottom" data-delay="50"
-			data-tooltip="Create and edit a level">Edit
-			Level</a>
+			class="btn tooltipped button-collapse btn-large waves-effect waves-light #00bcd4 cyan z-depth-5" data-position="bottom" data-delay="50"
+			data-tooltip="Create and edit a level">Edit Level</a>
 
 
 		<div id="gameScreen" class="editor">
@@ -39,7 +38,7 @@
 		<!-- Reload Level Button which reloads the game.php scene -->
 
 
-			<a id="mainMenuButton" class="btn tooltipped btn-large waves-light #1de9b6 teal accent-3"
+			<a id="mainMenuButton" class="btn tooltipped btn-large waves-light #1de9b6 teal accent-3 z-depth-5"
 				href="index.html" data-position="bottom" data-delay="50"
 				data-tooltip="Go to main menu"><i class="material-icons left">reorder</i>Main Menu</a>
 
@@ -56,49 +55,57 @@
 	</div>
 
 	<div id="inspector"> <!-- Slide out Navbar -->
-		<ul id="slide-out" class="side-nav">
+		<ul id="slide-out" class="side-nav #424242 grey darken-3">
+
 			<li><a href="javscript:void(0)"
-				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan"
+				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan z-depth-5"
+
 				onclick="openTab(event, 'levelEditor')">Level</a></li>
 			<li><a href="javscript:void(0)"
-				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan"
+				class="tabLinks  btn-large waves-effect waves-light #00bcd4 cyan z-depth-5"
+
 				onclick="openTab(event, 'objectList')">Objects</a></li>
 
-			
-
 			<li><div class="userView">
-					<div class="background">
-						<img src="images/longbackground.png">
-					</div>
 
+
+					</div>
 
 
 					<div id="levelEditor" class="tabContent">
 						<form class="saveLevelForm" accept-charset="utf-8">
-							<h5>Save</h5>
-							Level: <input type="text" name="levelName" value=""
-								class="#424242 grey darken-3" placeholder="Level Name" />
-							Author: <input type="text" name="author" value=""
+
+         <div class="container">
+					 <div class="col s4">
+
+
+							<h5> Level </h5> <input type="text" name="levelName" value=""
 								class="#424242 grey darken-3" placeholder="Level Name" />
 
-							<h4>Properties</h4>
-							Projectiles: <input type="text" name="projectiles" value=""
+							<h5> Author </h5> <input type="text" name="author" value=""
+								class="#424242 grey darken-3" placeholder="Level Name" />
+
+							<h5>Properties</h5>
+							 <input type="text" name="projectiles" value=""
 								class="#424242 grey darken-3"
-								placeholder="Amount of projectiles" /> Background Image: <input
+								placeholder="Amount of projectiles" /> <h5> Background Image </h5> <input
 								type="text" name="bgImage" value="../images/Field.jpg"
+
 								class="#424242 grey darken-3" /> <input type="submit"
-								class="btn-large waves-effect waves-light #424242 grey darken-3"
+								class="btn-large waves-effect waves-light cyan z-depth-5"
 								name="action" value="save" />
 						</form>
 
 						<!-- End of this form -->
-
+						<div class="container">
 						<form class="loadLevelForm" accept-charset="utf-8">
 							<h5>Load a level</h5>
-							<select id="levelSelectDropdown" class='dropdown-button btn' name="Level">
+
+
+							<select id="levelSelectDropdown" class='dropdown-button btn cyan' name="Level">
 								<!--  generated in code -->
 							</select> <input type="submit" name="action"
-								class="btn-large waves-effect waves-light#424242 grey darken-3"
+								class="btn-large waves-effect waves-light cyan z-depth-5"
 								value="load" />
 						</form>
 					</div>

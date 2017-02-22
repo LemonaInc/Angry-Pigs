@@ -68,19 +68,16 @@ body {
 
 
         <!-- Level Editor Button -->
-				<a class="btn tooltipped btn-large #26c6da cyan lighten-1"
+				<a class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5"
 					href="editor.php" data-position="bottom" data-delay="50"
 					data-tooltip="Go to level editor"><i
 					class="material-icons left">dashboard</i>Level Editor</a>
 
 
 				<a
-					<class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3 "href="editor.php?Level=Aliens+in+the+Valley.json" >
+					<class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3 z-depth-5" href="editor.php?Level=Aliens+in+the+Valley.json" >
 					<i class="tooltipped material-icons" data-position="bottom"
 					data-delay="50" data-tooltip="Start editing a default level">aspect_ratio</i>
-
-
-
 
 
 				</a>
@@ -103,16 +100,16 @@ body {
 
 										<h5>Load a level</h5>
 
-										<select id="levelSelectDropdown" class='browser-default #26c6da cyan lighten-1' name="Level">
+										<select id="levelSelectDropdown" class='browser-default #26c6da cyan lighten-1 z-depth-5' name="Level">
 										</select>
 
-										<input type="submit" value="Play Game" class="btn tooltipped btn-large #26c6da cyan lighten-1"  data-position="bottom" data-delay="50"
+										<input type="submit" value="Play Game" class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5"  data-position="bottom" data-delay="50"
 											data-tooltip="Play Selected Level"><i
 											class="material-icons">play_circle_outline</i>
 
 									<div class="container">
 
-									
+
 
 										<!--Show Hide Script-->
 
@@ -135,39 +132,12 @@ Materialize.toast('Hello', 4000) // 4000 is the duration of the toast
     }
   );
 
-  </script>
-
+  								</script>
 										<div class="container">
 											<div class="section"></div>
 										</div>
 
 										<!-- End of body -->
-
-
-
-<div class="card card-panel hoverable">
-
-	<div class="card-image waves-effect waves-block waves-light">
-		<img class="activator" src="images/Background.png">
-	</div>
-	<div class="card-content">
-		<span class="card-title activator grey-text text-darken-4">Featured
-			Level<i class="material-icons right">more_vert</i>
-		</span>
-		<p>
-			<a href="#">This is a link</a>
-		</p>
-	</div>
-	<div class="card-reveal">
-		<span class="card-title grey-text text-darken-4">Featured Level<i
-			class="material-icons right">close</i></span>
-		<p>A featured level description</p>
-	</div>
-</div>
-
-
-
-
 
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -211,7 +181,6 @@ $.post('server/', request)
 </script>
 
 
-//
 <script src='js/index.js'></script>
 
 <script>   $(document).ready(function(){
