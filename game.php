@@ -19,13 +19,13 @@
 
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/Box2dWeb-2.1.a.3.min.js"></script> <!--  TODO: Can move this to be loaded when game menu option is clicked -->
-	
+
 	<!-- Add Howler Library -->
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.core.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.spatial.min.js"></script>	
-	
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.1/howler.spatial.min.js"></script>
+
 </head>
 <body>
 
@@ -33,7 +33,7 @@
 <div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 	<div class="container">
-	
+
 			<!-- Create a modal popup div here -->
 
 		<a class="waves-effect waves-light btn" id="popupButton" href="#modal1">Die popup</a>
@@ -66,31 +66,38 @@
 
 			 </div>
 		 </div>
-	
-	
+
+
 
 		<!-- Back Button which goes back to index.html when clicked on -->
-		<a id="editButton"
-			class="waves-effect waves-light btn-large #ffd54f amber lighten-2" href="index.html"><i
-			class="material-icons left">reorder</i>Main Menu</a>
 
-<!-- Reload Level Button which reloads the game.php scene -->
-			<a  id="reloadButton"
-			class="btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3
-" href="game.php"><i
-			class="material-icons left">loop</i>Reload</a>
-			
-						<!-- Go to level editor button -->
-			<a id="goToLevelEditor"
-			class=" btn-large waves-effect waves-light #b388ff deep-purple accent-1" href="editor.php"><i
-			class="material-icons left">dashboard</i>Level Editor</a>
-			
+
+
+
+			<a id="editButton" class="btn tooltipped btn-large waves-light #ffd54f amber lighten-2"
+				href="index.html" data-position="bottom" data-delay="50"
+				data-tooltip="Go to main menu"><i class="material-icons left">reorder</i>Main Menu</a>
+
+      <!-- Reload Level Button which reloads the game.php scene -->
+
+			<a id="reloadButton" class="btn tooltipped btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3"
+				href="game.php" data-position="bottom" data-delay="50"
+				data-tooltip="Reload Level"><i class="material-icons left">loop</i>reload</a>
+
+      <!-- Go to level editor button -->
+			<a id="goToLevelEditor" class="btn tooltipped btn-large waves-light #b388ff deep-purple accent-1"
+				href="editor.php" data-position="bottom" data-delay="50"
+				data-tooltip="Go to level editor"><i class="material-icons left">dashboard</i>Level Editor</a>
+
+
+
+
 
 <!-- GameScreen -->
 		<div id="gameScreen"><!--  Filled in with actual level info programmatically --></div>
 
-		<canvas id="debugCanvas" width=1024px height=648px></canvas>			
-			
+		<canvas id="debugCanvas" width=1024px height=648px></canvas>
+
 		<div class="background">
 			<div class="mountains"></div>
  			<div class="grass"></div>

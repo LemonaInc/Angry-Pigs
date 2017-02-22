@@ -31,7 +31,7 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
   	max-width: 100%;
   	position: absolute;
 	top: 848px;
-} 
+}
 
 .mountains {
     position:absolute;
@@ -110,8 +110,8 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 
 #reloadButton {
 position: fixed;
-top: 90px !important;
-left: 15px !important;
+top: 15px !important;
+left: 1300px !important;
 
 }
 

@@ -25,27 +25,34 @@
 	<div class="container">
 		<a id="editButton" href="#" name="slide-out"
 			data-activates="slide-out"
-			class="button-collapse btn-large waves-effect waves-light #00bcd4 cyan">Edit
+
+
+			class="btn tooltipped button-collapse btn-large waves-effect waves-light #00bcd4 cyan" data-position="bottom" data-delay="50"
+			data-tooltip="Create and edit a level">Edit
 			Level</a>
+
+
 		<div id="gameScreen" class="editor">
 			<!--  Filled in with actual level info programmatically -->
 		</div>
 
 		<!-- Reload Level Button which reloads the game.php scene -->
-			<a  id="mainMenuButton"
-			class="btn-large waves-effect waves-light #1de9b6 teal accent-3" href="index.html"><i
-			class="material-icons left">reorder</i>Main Menu</a>
+
+
+			<a id="mainMenuButton" class="btn tooltipped btn-large waves-light #1de9b6 teal accent-3"
+				href="index.html" data-position="bottom" data-delay="50"
+				data-tooltip="Go to main menu"><i class="material-icons left">reorder</i>Main Menu</a>
 
 
 		<div id="levelToLoad"><?php echo $_GET["Level"];?></div>
 
 		<canvas id="debugCanvas" width=1024px height=648px></canvas>
-		
+
 		<div class="background">
 				<div class="mountains"></div>
  				<div class="grass"></div>
 		</div>
-		
+
 	</div>
 
 	<div id="inspector"> <!-- Slide out Navbar -->
@@ -131,7 +138,7 @@
 					</div>
 
 				</div>
-		
+
 		</ul>
 	</div>
 
@@ -145,7 +152,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
-	
+
 	<!-- Script for sidenav-->
 	<script>
 		<!-- Initialize collapse button -->
