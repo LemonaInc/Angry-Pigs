@@ -1,6 +1,7 @@
 class Game {
 	constructor() {
 		this.world = new WorldController($("#gameScreen"));
+		this.projectiles = 0;
 		this.captivesRemaining = 0;
 		this.physicsEntities = [];
 				this.loadLevel();
@@ -70,8 +71,6 @@ class Game {
 						this.world.destroy(this.physicsEntities[i].physicsModel);
 						this.physicsEntities.splice(i, 1);
 						this.captivesRemaining--;
-
-						console.log(this.captivesRemaining);
 				}
 			}
 		}
@@ -93,12 +92,18 @@ class Game {
 
 			}
 			});
+			
 
 // This will only play the winSound once
 		winSound.once('load', function(){
 	  winSound.play();
 	});
 
+		}
+		
+		
+		if (this.physicsEntities.length > 0 && this.projectiles <= 0) {
+			$('#modal1').modal('open');
 		}
 	}
 
@@ -148,6 +153,8 @@ class Game {
 				// Change background image based on .json file.
 				let $newImage = `url('images/${levelDataObj.bgImage}')`;
 				$('body').css("background-image", $newImage);
+
+				this.projectiles = levelDataObj.projectiles;
 
 				// Wall Bottoms
 				for (let i = 0; i < levelDataObj.wallBottoms.length; i++) {
@@ -294,27 +301,32 @@ class Game {
 	}*/
 
 	fire() {
-		//Determine angle from the centre of the UFO (where balls are released) to mouse cursor.
-		var ufoPoint = { x: 520, y: 10 }
-		var mousePoint = { x: event.clientX - $('#gameScreen').position().left, y: event.clientY - $('#gameScreen').position().top }
-		var angleDeg = Math.atan2(mousePoint.y - ufoPoint.y, mousePoint.x - ufoPoint.x) * 180 / Math.PI;
+		
+		if (this.projectiles > 0) {
+			//Determine angle from the centre of the UFO (where balls are released) to mouse cursor.
+			var ufoPoint = { x: 520, y: 10 }
+			var mousePoint = { x: event.clientX - $('#gameScreen').position().left, y: event.clientY - $('#gameScreen').position().top }
+			var angleDeg = Math.atan2(mousePoint.y - ufoPoint.y, mousePoint.x - ufoPoint.x) * 180 / Math.PI;
 
-		//Determine difference between points using pythagorean theorem
-		var a = ufoPoint.x - mousePoint.x
-		var b = ufoPoint.y - mousePoint.y
-		var distanceBetweenPoints = Math.sqrt( a*a + b*b ) * 150;
+			//Determine difference between points using pythagorean theorem
+			var a = ufoPoint.x - mousePoint.x
+			var b = ufoPoint.y - mousePoint.y
+			var distanceBetweenPoints = Math.sqrt( a*a + b*b ) * 150;
 
-		//Create energyball in DOM
-		var energyBall = document.createElement("div");
-		$(energyBall).addClass("energyBall");
-		$('#gameScreen').append(energyBall);
+			//Create energyball in DOM
+			var energyBall = document.createElement("div");
+			$(energyBall).addClass("energyBall");
+			$('#gameScreen').append(energyBall);
 
-		//Create energyball in physics, apply force.
-		let ent = new Entity(this.world, $(energyBall));
-		this.physicsEntities.push(ent);
-		ent.applyForce( ( angleDeg ), distanceBetweenPoints );
+			//Create energyball in physics, apply force.
+			let ent = new Entity(this.world, $(energyBall));
+			this.physicsEntities.push(ent);
+			ent.applyForce( ( angleDeg ), distanceBetweenPoints );
+			
+			this.projectiles--;
+			console.log(this.projectiles);
+		}
 	}
-
 }
 
 $(document).ready( () => {
