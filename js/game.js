@@ -20,6 +20,13 @@ class Game {
 
 				loadSound.play();
 
+       // Play the buttonClick sound
+				var buttonClick = new Howl({
+				src: ['FX/buttonClick.mp3']
+				});
+
+
+
 
 		//Create event listener for mouse
 		$('#gameScreen').click( () => {
@@ -72,6 +79,7 @@ class Game {
 				$( "#gameScreen" ).empty();
 				this.world = new WorldController($("#gameScreen"));
 	            this.physicsEntities = [];
+
 
 				$('#gameScreen').prepend(`<div id="ufo"></div>`);
 	            $('#ufo').animate({
@@ -141,14 +149,13 @@ class Game {
 
 
 
-
-
-
 				// Captives
 				for (let i = 0; i < levelDataObj.captives.length; i++) {
 					var newCaptive = document.createElement("div");
 					$(newCaptive).addClass("draggable captive");
 					$(newCaptive).attr('id', "captive_" + i);
+
+
 
 					levelDataObj.captives[i] = {
 							"ID"	 : "captive_" + i,
@@ -166,10 +173,15 @@ class Game {
 
 			        $("#gameScreen").append(newCaptive);
 
+
+
+
 					$(".draggable").click(( event ) => this.selectObject( event ));
 
 			        let ent = new Entity(this.world, $(newCaptive));
 			        this.physicsEntities.push(ent);
+
+
 				}
 			})
 	}

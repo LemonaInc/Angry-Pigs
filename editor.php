@@ -157,13 +157,9 @@
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
 	<!-- Script for sidenav-->
-	<script>	<!-- Initialize collapse button -->
-		$(".button-collapse").sideNav();
-		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-		//$('.collapsible').collapsible();
-	</script>
 
-	<script src="js/game.js"></script>
+
+
 	<script src="js/app.js"></script>
 
 </body>

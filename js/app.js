@@ -29,6 +29,11 @@ class App{
             castlePieces: [], //Fill with objects
 						wallBlocks: []
         }
+
+
+	
+				// buttonClick.play();
+
         this.loadLevelList();
 		this.dragHandler = new DraggableHandler( $('#gameScreen'), this.entityList );
 
@@ -69,6 +74,9 @@ class App{
         $("#gameScreen").append(entity);
         var spawnX = "400px";
         var spawnY = "170px";
+
+
+
 
 		switch(type){
 			case "wall":
