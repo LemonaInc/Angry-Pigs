@@ -1,6 +1,12 @@
-/*
- * @name: Draggable Handler   
- * @author:    Scott Henshaw with some modifications by Jesse Carmack & Jaxon Stevens.
+/**
+ * @name: Draggable Handler
+ *
+ * @copyright: (C) 2014 Kibble Games Inc in cooperation with Vancouver Film School.  All Rights Reserved.
+ * @author:    Scott Henshaw {@link mailto:shenshaw@vfs.com}
+ * @version:   1.0.0
+ *
+ * @summary:   Framework Singleton Class to contain a web app
+ *
  */
 'use strict';
 
@@ -76,18 +82,22 @@ class DraggableHandler {
     			this.entityListRef.wallBottoms[idExtracted].xPos = event.clientX - this.offsetX + "px";
         		this.entityListRef.wallBottoms[idExtracted].yPos = event.clientY - this.offsetY + "px";
     		}
+    		
     		else if ( $(event.target).hasClass("wallTop") ){
     			this.entityListRef.wallTops[idExtracted].xPos = event.clientX - this.offsetX + "px";
         		this.entityListRef.wallTops[idExtracted].yPos = event.clientY - this.offsetY + "px";
     		}
+
     		else if ( $(event.target).hasClass("tower") ){
     			this.entityListRef.towers[idExtracted].xPos = event.clientX - this.offsetX + "px";
         		this.entityListRef.towers[idExtracted].yPos = event.clientY - this.offsetY + "px";
     		}
+    		
     		else if ( $(event.target).hasClass("pillar") ){
     			this.entityListRef.pillars[idExtracted].xPos = event.clientX - this.offsetX + "px";
         		this.entityListRef.pillars[idExtracted].yPos = event.clientY - this.offsetY + "px";
     		}
+    		
     		else if ( $(event.target).hasClass("captive") ){
     			this.entityListRef.captives[idExtracted].xPos = event.clientX - this.offsetX + "px";
         		this.entityListRef.captives[idExtracted].yPos = event.clientY - this.offsetY + "px";
@@ -98,7 +108,7 @@ class DraggableHandler {
     over( event ) {
 
         // make the thing whatever element we are hovering over
-        // this.thing = event.target;
+        //this.thing = event.target;
     	this._draggable$ = $(event.target);
 
     	if (this._draggable$.hasClass("draggable")) {
@@ -126,6 +136,7 @@ class DraggableHandler {
 
     	this.mouseDown = false;
     	if (this._draggable$ != null) {
+
     		// reset the styles and z index
     		this._draggable$.css( { cursor:"pointer", zindex: this.zIndex } );
             this.zIndex = DEFAULT_Z;
