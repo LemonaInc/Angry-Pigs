@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+
 <title>Level Editor</title>
 
 <!-- CSS  -->
@@ -26,6 +26,7 @@
 
 	<!-- Style CSS Elements for page -->
 	<style>
+
 * {
 	box-sizing: border-box;
 }
@@ -63,6 +64,7 @@ body {
     width:200%
 }
 
+
 </style>
 
 
@@ -83,17 +85,16 @@ body {
 	<nav>
 		<div class="nav-wrapper #00b0ff light-blue accent-3">
 			<a href="#!" class="brand-logo center "></a>
-			<ul class="center hide-on-med-and-down">
+			<ul class="center">
 
 				<!-- Level Buttons -->
 
 
         <!-- Level Editor Button -->
-				<a class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5"
+				<a class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5" id="levelButton"
 					href="editor.php" data-position="bottom" data-delay="50"
 					data-tooltip="Go to level editor"><i
 					class="material-icons left">dashboard</i>Level Editor</a>
-
 
 
 				<a
@@ -113,14 +114,11 @@ body {
 				<div class="section no-pad-bot" id="index-banner">
 					<div class="container">
 						<div class="row center">
-							<img width="451" height="32" src="images/logo.png" alt="logo">
+							<img width="451" height="32" class="responsive-img" src="images/logo.png" alt="logo">
 						</div>
 
 
-
 						<div class="container">
-
-
 
 							<!-- Load the level here -->
 							    <div id="inspector">
@@ -138,12 +136,6 @@ body {
 
 
 										<!--Show Hide Script-->
-
-										<script>
-// Materialize.toast(message, displayLength, className, completeCallback);
-Materialize.toast('Hello', 4000) // 4000 is the duration of the toast
-</script>
-
 
 										<script>
       $('.dropdown-button').dropdown({
