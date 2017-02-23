@@ -63,15 +63,22 @@ class Game {
 
 	update() {
 		this.world.update();
-		
-//		for (var i = 0; i < this.physicsEntities.length; i++) {
-//			if(this.physicsEntities[i].physicsModel.m_xf.position.x < -50) {
-//				$(this.physicsEntities[i].dom$).remove();
-//				this.world.destroy(this.physicsEntities[i].physicsModel);
-//				this.physicsEntities.splice(i, 1);
-//			}
-//		}
-		
+
+		// Checks if any object has left the defined bounds (box2d measurements x -25/75), and if so, deletes it.
+		for (var i = 0; i < this.physicsEntities.length; i++) {
+			if(this.physicsEntities[i].physicsModel.m_xf.position.x < -25) {
+				$(this.physicsEntities[i].dom$).remove();
+				this.world.destroy(this.physicsEntities[i].physicsModel);
+				this.physicsEntities.splice(i, 1);
+			}
+		}
+		for (var i = 0; i < this.physicsEntities.length; i++) {
+			if(this.physicsEntities[i].physicsModel.m_xf.position.x > 75) {
+				$(this.physicsEntities[i].dom$).remove();
+				this.world.destroy(this.physicsEntities[i].physicsModel);
+				this.physicsEntities.splice(i, 1);
+			}
+		}
 		
 
 		for (var i = 0; i < this.physicsEntities.length; i++) {

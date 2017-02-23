@@ -11,6 +11,7 @@ body {
   background-position: 0px -150px;
   width: 100%;
   max-width: 100%;
+  overflow: hidden;
 }
 
 ul.tabBar li a:hover {background-color: #ddd; cursor: pointer;}
@@ -111,14 +112,14 @@ ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
 #reloadButton {
 position: fixed;
 top: 15px !important;
-left: 1300px !important;
+right: 15px !important;
 
 }
 
 #goToLevelEditor {
 position: fixed;
 top: 15px !important;
-left: 250px !important;
+left: 218px !important;
 
 }
 

@@ -36,8 +36,6 @@
 
 			<!-- Create a modal popup div here -->
 
-		<a class="waves-effect waves-light btn" id="popupButton" href="#modal1">Die popup</a>
-
 	   <div id="modal1" class="modal">
 	     <div class="modal-content">
 	       <h4>Sorry your alien died</h4>
@@ -52,7 +50,7 @@
 
 		<!-- End modal popup div -->
 
-		<a class="waves-effect waves-light btn" id="popupWinButton" href="#modal2">Win Popup</a>
+
 
 		 <div id="modal2" class="modal">
 			 <div class="modal-content">
