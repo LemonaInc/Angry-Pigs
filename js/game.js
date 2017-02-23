@@ -1,3 +1,5 @@
+var game = null;
+
 class Game {
 	constructor() {
 		this.world = new WorldController($("#gameScreen"));
@@ -63,7 +65,6 @@ class Game {
 
 	update() {
 		this.world.update();
-
 		// Checks if any object has left the defined bounds (box2d measurements x -25/75), and if so, deletes it.
 		for (var i = 0; i < this.physicsEntities.length; i++) {
 			if(this.physicsEntities[i].physicsModel.m_xf.position.x < -25) {
@@ -168,9 +169,7 @@ class Game {
 
 	            // UFO animates in
 				$('#gameScreen').prepend(`<div id="ufo"></div>`);
-	            $('#ufo').animate({
-	            	margin: "-90px 0 0 240px"
-	            }, 1500);
+				$('#ufo').animate({'margin': "-100px 0 0 240px"}, 2000, function() { game.ufoHover(); });
 
 				// Turn levelDataStr into a JS object.
 				let levelDataObj = JSON.parse( levelDataStr );
@@ -352,10 +351,48 @@ class Game {
 			console.log(this.projectiles);
 		}
 	}
+	
+	ufoHover() {
+		var floatUp = ( (targetElement, speed) => {
+		    $(targetElement).css({'margin': "-90px 0 0 240px"});
+		    $(targetElement).animate(
+		        {
+		        'margin': "-100px 0 0 240px"
+		        }, 
+		        { 
+		        duration: speed, 
+		        complete: function(){
+		            floatDown(this, speed);
+		            }
+		        }
+		    );
+		});
+		
+		var floatDown = ( (targetElement, speed) => {
+		    $(targetElement).css({'margin': "-100px 0 0 240px"});
+		    $(targetElement).animate(
+		        {
+		        'margin': "-90px 0 0 240px"
+		        }, 
+		        { 
+		        duration: speed, 
+		        complete: function(){
+		            floatUp(this, speed);
+		            }
+		        }
+		    );
+		});
+		
+		floatUp($('#ufo'), 2000);
+		floatDown($('#ufo'), 2000);
+		
+		
+	}
+	
 }
 
 $(document).ready( () => {
-	let game = new Game();
+	game = new Game();
 	game.run();
 
 	$('.modal').modal();
