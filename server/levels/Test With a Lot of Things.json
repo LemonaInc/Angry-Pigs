@@ -1,0 +1,142 @@
+{
+    "levelName": "Test With a Lot of Things",
+    "author": "jesse",
+    "projectiles": "60",
+    "bgImage": "gradient3.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "403px",
+            "yPos": "423px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "205px",
+            "yPos": "430px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_2",
+            "xPos": "228px",
+            "yPos": "505px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_3",
+            "xPos": "502px",
+            "yPos": "523px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_4",
+            "xPos": "681px",
+            "yPos": "496px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_5",
+            "xPos": "536px",
+            "yPos": "528px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "624px",
+            "yPos": "122px",
+            "width": "112px",
+            "height": "78px"
+        },
+        {
+            "ID": "wallTop_1",
+            "xPos": "181px",
+            "yPos": "286px",
+            "width": "112px",
+            "height": "78px"
+        },
+        {
+            "ID": "wallTop_2",
+            "xPos": "611px",
+            "yPos": "310px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [
+        {
+            "ID": "wallBottom_0",
+            "xPos": "499px",
+            "yPos": "231px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_1",
+            "xPos": "169px",
+            "yPos": "94px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_2",
+            "xPos": "468px",
+            "yPos": "372px",
+            "width": "112px",
+            "height": "97px"
+        }
+    ],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "358px",
+            "yPos": "263px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "294px",
+            "yPos": "430px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_2",
+            "xPos": "782px",
+            "yPos": "505px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_3",
+            "xPos": "331px",
+            "yPos": "528px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": [
+        {
+            "ID": "tower_0",
+            "xPos": "866px",
+            "yPos": "296px",
+            "width": "106px",
+            "height": "343px"
+        },
+        {
+            "ID": "tower_1",
+            "xPos": "45px",
+            "yPos": "293px",
+            "width": "106px",
+            "height": "343px"
+        }
+    ]
+}
