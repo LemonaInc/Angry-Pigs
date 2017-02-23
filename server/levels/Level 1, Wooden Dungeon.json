@@ -1,0 +1,70 @@
+{
+    "levelName": "Level 1",
+    "author": "Jesse",
+    "projectiles": "100",
+    "bgImage": "gradient2.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "474px",
+            "yPos": "471px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "433px",
+            "yPos": "368px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "517px",
+            "yPos": "545px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "489px",
+            "yPos": "545px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_2",
+            "xPos": "461px",
+            "yPos": "545px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_3",
+            "xPos": "433px",
+            "yPos": "545px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_4",
+            "xPos": "517px",
+            "yPos": "447px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_5",
+            "xPos": "433px",
+            "yPos": "448px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": []
+}

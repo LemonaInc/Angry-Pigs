@@ -1,0 +1,99 @@
+{
+    "levelName": "Level 2, Two Crummy Towers",
+    "author": "Jesse",
+    "projectiles": "50",
+    "bgImage": "gradient3.png",
+    "captives": [
+        {
+            "ID": "captive_0",
+            "xPos": "165px",
+            "yPos": "470px",
+            "width": "28px",
+            "height": "73px"
+        },
+        {
+            "ID": "captive_1",
+            "xPos": "817px",
+            "yPos": "468px",
+            "width": "28px",
+            "height": "73px"
+        }
+    ],
+    "wallTops": [
+        {
+            "ID": "wallTop_0",
+            "xPos": "124px",
+            "yPos": "270px",
+            "width": "112px",
+            "height": "78px"
+        },
+        {
+            "ID": "wallTop_1",
+            "xPos": "775px",
+            "yPos": "269px",
+            "width": "112px",
+            "height": "78px"
+        }
+    ],
+    "wallBottoms": [
+        {
+            "ID": "wallBottom_0",
+            "xPos": "775px",
+            "yPos": "543px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_1",
+            "xPos": "124px",
+            "yPos": "544px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_2",
+            "xPos": "124px",
+            "yPos": "349px",
+            "width": "112px",
+            "height": "97px"
+        },
+        {
+            "ID": "wallBottom_3",
+            "xPos": "775px",
+            "yPos": "348px",
+            "width": "112px",
+            "height": "97px"
+        }
+    ],
+    "pillars": [
+        {
+            "ID": "pillar_0",
+            "xPos": "208px",
+            "yPos": "446px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_1",
+            "xPos": "124px",
+            "yPos": "446px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_2",
+            "xPos": "859px",
+            "yPos": "445px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_3",
+            "xPos": "775px",
+            "yPos": "446px",
+            "width": "28px",
+            "height": "97px"
+        }
+    ],
+    "towers": []
+}
