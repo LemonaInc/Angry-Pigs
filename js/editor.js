@@ -1,24 +1,13 @@
 /*
+  Castles & UFOs Level Editor
 
-  Castles & UFOs
-
-   @copyright: (C) December 2017 Jesse Carmack, All rights reserved.
-   @author:    Jesse Carmack
-   @version:   0.1
-   @summary:   An Angry Birds clone.  Shh.
-
-  Concepts I'm Coming to Terms With
-
-   - Event listeners, once declared, listen and wait from that point forward, for an event.
-   - Event.target represents what html element you've touched in someway, including ID, class, and HTML attribute.
-   - Remember, "this" IS the app.  It's a way of accessing a variable that belongs to the object you're in.
-     	"this.entityList" is the same as saying "app.entityList", or, abstracted: "castlesAndUFOs.entityList".
-
+   @copyright: (C) December 2017 Jesse Carmack & Jaxon Stevens, All rights reserved.
+   @author:    Jesse Carmack & Jaxon Stevens
+   @version:   1.0
+   @summary:   Saves and loads .json files containing level information.
 */
-
 'use strict';
 
-//Define application.
 class App{
 
 	constructor() {
@@ -43,7 +32,7 @@ class App{
 		});
 
 		$('.loadLevelForm').on('submit', ( event ) => {
-			// I'll receive level name and action load.
+			// I'll receive level name and action "load" from form.
 			event.preventDefault();
 			this.loadLevel( event );
 		})
@@ -68,12 +57,15 @@ class App{
 		$(entity).addClass(type);
         $("#gameScreen").append(entity);
         
-        var spawnX = "400px"; // Where to spawn new objects.
+        // Where to spawn new objects.
+        var spawnX = "400px";
         var spawnY = "170px";
 
+        // Give object an ID and write the initial spawn location to entityList.
 		switch(type){
 			case "wallBottom":
-				var newObjectID = this.entityList.wallBottoms.length; // Give object an ID and write the initial spawn location to entityList.
+				
+				var newObjectID = this.entityList.wallBottoms.length;
 				$(entity).attr('id', "wallBottom_" + newObjectID);
 				this.entityList.wallBottoms[newObjectID] = {
 						"ID"	 : "wallBottom_" + newObjectID,
@@ -309,14 +301,7 @@ class App{
 
 }
 
-
-// MAIN -- START HERE!
 //Wait till all HTML is loaded before App runs.
-//The parameter that's in here is a function.
-//Document ready only gets called when everything
-//else is finished loading in the document.
 $(document).ready( () => {
-
 	let app = new App();
-
-} );
+});
