@@ -35,21 +35,24 @@
 		margin: 0; /* Enables elements to touch sides of browser window. */
 		background-image: url("images/JustGradient.png");
 
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-
 	}
 
+
 	.mountains {
-		position: fixed;
+
+		background-image: url("images/mountains.png");
+		position:fixed;
 		top: 600px;
 		left: 0px;
 
 		display: flex;
-		min-height: 500px;
+		min-height: 50vh;
 		flex-direction: column;
 	}
+
+	main {
+    flex: 1 0 auto;
+  }
 
 	.ufo {
 		width: 250px;
@@ -114,6 +117,8 @@
 
 					<div class="col s12"><class="flow-text"><img class="responsive-img mountains" src="images/mountains.png"></div>
 				 </div>
+
+
 
 
 					<img class="responsive-img ufo" src="images/ufosmall.png">
