@@ -1,79 +1,79 @@
 .objectInList {
- 	margin: 20px;
+  margin: 20px;
 }
 
 .objectInList:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 #wallBottom {
-	width: 112px;
-	height: 97px;
-	background-image: url("../images/wallBottom.png");
-	background-color: grey;
+  width: 112px;
+  height: 97px;
+  background-image: url("../images/wallBottom.png");
+  background-color: grey;
 }
 
 .wallBottom {
-	width: 112px;
-	height: 97px;
-	background-image: url("../images/wallBottom.png");
-	background-color: grey;
-	position: absolute;
+  width: 112px;
+  height: 97px;
+  background-image: url("../images/wallBottom.png");
+  background-color: grey;
+  position: absolute;
 }
 
 #captive {
-	width: 28px;
-	height: 73px;
-	background-image: url("../images/captive.png");
+  width: 28px;
+  height: 73px;
+  background-image: url("../images/captive.png");
 }
 
 .captive {
-	width: 28px;
-	height: 73px;
-	background-image: url("../images/captive.png");
-	position: absolute;
+  width: 28px;
+  height: 73px;
+  background-image: url("../images/captive.png");
+  position: absolute;
 }
 
 #wallTop {
-	width: 112px;
-	height: 78px;
-	background-image: url("../images/wallTop.png");
+  width: 112px;
+  height: 78px;
+  background-image: url("../images/wallTop.png");
 }
 
 .wallTop {
-	width: 112px;
-	height: 78px;
-	background-image: url("../images/wallTop.png");
-	position: absolute;
+  width: 112px;
+  height: 78px;
+  background-image: url("../images/wallTop.png");
+  position: absolute;
 }
 
 #tower {
-	width: 106px;
-	height: 343px;
-	background-image: url("../images/tower.png");
+  width: 106px;
+  height: 343px;
+  background-image: url("../images/tower.png");
 }
 
 
 .tower {
-	width: 106px;
-	height: 343px;
-	background-image: url("../images/tower.png");
-	position: absolute;
+  width: 106px;
+  height: 343px;
+  background-image: url("../images/tower.png");
+  position: absolute;
 }
 
 #pillar {
-	width: 28px;
-	height: 97px;
-	background-image: url("../images/pillar.png");
+  width: 28px;
+  height: 97px;
+  background-image: url("../images/pillar.png");
 }
 
 .pillar {
-	width: 28px;
-	height: 97px;
-	background-image: url("../images/pillar.png");
-	position: absolute;
+  width: 28px;
+  height: 97px;
+  background-image: url("../images/pillar.png");
+  position: absolute;
 }
 
 .selected {
-	filter: drop-shadow(5px 11px 5px rgba(0,0,0,0.45)); 
+  filter: drop-shadow(5px 11px 5px rgba(0,0,0,0.45));
 }

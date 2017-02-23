@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 
-<title>Level Editor</title>
+	<title>Level Editor</title>
 
-<!-- CSS  -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<link href="css/materialize.css" type="text/css" rel="stylesheet"
+	<link href="css/materialize.css" type="text/css" rel="stylesheet"
 	media="screen,projection" />
 
 
 
 
-<!--Jquery Code Source-->
-<script src='https://code.jquery.com/jquery-latest.js'></script>
-<!-- ADDED AJAX SCRIPT -->
-<script
+	<!--Jquery Code Source-->
+	<script src='https://code.jquery.com/jquery-latest.js'></script>
+	<!-- ADDED AJAX SCRIPT -->
+	<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </head>
@@ -27,45 +27,45 @@
 	<!-- Style CSS Elements for page -->
 	<style>
 
-* {
-	box-sizing: border-box;
-}
+	* {
+		box-sizing: border-box;
+	}
 
-body {
-	margin: 0; /* Enables elements to touch sides of browser window. */
-	background-image: url("images/JustGradient.png");
+	body {
+		margin: 0; /* Enables elements to touch sides of browser window. */
+		background-image: url("images/JustGradient.png");
 
-	display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 
-}
+	}
 
-.mountains {
-    position: absolute;
-    top: 600px;
+	.mountains {
+		position: absolute;
+		top: 600px;
 		left: 0px;
-    background-repeat: repeat-x;
-    height: 300px;
-}
+		background-repeat: repeat-x;
+		height: 300px;
+	}
 
-.ufo {
-	  width: 250px;
-    margin: 0 auto;
+	.ufo {
+		width: 250px;
+		margin: 0 auto;
 
-}
+	}
 
-.backgroundimage {
-    position: fixed;
-    top: 0px;
+	.backgroundimage {
+		position: fixed;
+		top: 0px;
 		left: 0px;
-    background-repeat: repeat-x;
-    height: 300px;
-    width:200%
-}
+		background-repeat: repeat-x;
+		height: 300px;
+		width:200%
+	}
 
 
-</style>
+	</style>
 
 
 	<div class="fixed-action-btn toolbar">
@@ -74,83 +74,83 @@ body {
 		</a>
 		<ul>
 			<li class="waves-effect waves-light"><a href="#!">Aliens
-					Valley</a></li>
-			<li class="waves-effect waves-light"><a href="#!">Spaceship
+				Valley</a></li>
+				<li class="waves-effect waves-light"><a href="#!">Spaceship
 					Level</a></li>
-			<li class="waves-effect waves-light"><a href="#!">Rooftop</a></li>
-			<li class="waves-effect waves-light"><a href="#!">Down Below</a></li>
-		</ul>
-	</div>
+					<li class="waves-effect waves-light"><a href="#!">Rooftop</a></li>
+					<li class="waves-effect waves-light"><a href="#!">Down Below</a></li>
+				</ul>
+			</div>
 
-	<nav>
-		<div class="nav-wrapper #00b0ff light-blue accent-3">
-			<a href="#!" class="brand-logo center "></a>
-			<ul class="center">
+			<nav>
+				<div class="nav-wrapper #00b0ff light-blue accent-3">
+					<a href="#!" class="brand-logo center "></a>
+					<ul class="center">
 
-				<!-- Level Buttons -->
-
-
-        <!-- Level Editor Button -->
-				<a class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5" id="levelButton"
-					href="editor.php" data-position="bottom" data-delay="50"
-					data-tooltip="Go to level editor"><i
-					class="material-icons left">dashboard</i>Level Editor</a>
+						<!-- Level Buttons -->
 
 
-				<a
-					<class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3 z-depth-5" href="editor.php?Level=Aliens+in+the+Valley.json" >
-					<i class="tooltipped material-icons" data-position="bottom"
-					data-delay="50" data-tooltip="Start editing a default level">aspect_ratio</i>
+						<!-- Level Editor Button -->
+						<a class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5" id="levelButton"
+						href="editor.php" data-position="bottom" data-delay="50"
+						data-tooltip="Go to level editor"><i
+						class="material-icons left">dashboard</i>Level Editor</a>
 
 
-				</a>
+						<a
+						<class="btn-floating btn-large halfway-fab waves-effect waves-light #424242 grey darken-3 z-depth-5" href="editor.php?Level=Aliens+in+the+Valley.json" >
+						<i class="tooltipped material-icons" data-position="bottom"
+						data-delay="50" data-tooltip="Start editing a default level">aspect_ratio</i>
 
 
-				<img class="responsive-img mountains" src="images/mountains.png">
-				<img class="responsive-img ufo" src="images/ufosmall.png">
+					</a>
 
 
-				<!-- End Navigation -->
-				<div class="section no-pad-bot" id="index-banner">
-					<div class="container">
-						<div class="row center">
-							<img width="451" height="32" class="responsive-img" src="images/logo.png" alt="logo">
-						</div>
+					<img class="responsive-img mountains" src="images/mountains.png">
+					<img class="responsive-img ufo" src="images/ufosmall.png">
 
 
+					<!-- End Navigation -->
+					<div class="section no-pad-bot" id="index-banner">
 						<div class="container">
+							<div class="row center">
+								<img width="451" height="32" class="responsive-img" src="images/logo.png" alt="logo">
+							</div>
 
-							<!-- Load the level here -->
-							    <div id="inspector">
+
+							<div class="container">
+
+								<!-- Load the level here -->
+								<div id="inspector">
 									<form action="game.php"  method="get">
 										<h5>Load a level</h5>
 										<select id="levelSelectDropdown" class='browser-default #26c6da cyan lighten-1 z-depth-5' name="Level">
 										</select>
 
 										<input type="submit" value="Play Game" class="btn tooltipped btn-large #26c6da cyan lighten-1 z-depth-5"  data-position="bottom" data-delay="50"
-											data-tooltip="Play Selected Level"><i
-											
-
-									<div class="container">
+										data-tooltip="Play Selected Level"><i
 
 
+										<div class="container">
 
-										<!--Show Hide Script-->
 
-										<script>
-      $('.dropdown-button').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrainWidth: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: false, // Displays dropdown below the button
-      alignment: 'left', // Displays dropdown with edge aligned to the left of button
-      stopPropagation: false // Stops event propagation
-    }
-  );
 
-  								</script>
+											<!--Show Hide Script-->
+
+											<script>
+											$('.dropdown-button').dropdown({
+												inDuration: 300,
+												outDuration: 225,
+												constrainWidth: false, // Does not change width of dropdown to that of the activator
+												hover: true, // Activate on hover
+												gutter: 0, // Spacing from edge
+												belowOrigin: false, // Displays dropdown below the button
+												alignment: 'left', // Displays dropdown with edge aligned to the left of button
+												stopPropagation: false // Stops event propagation
+											}
+										);
+
+										</script>
 										<div class="container">
 											<div class="section"></div>
 										</div>
@@ -159,53 +159,53 @@ body {
 
 										<!-- End of body -->
 
-<!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+										<!--  Scripts-->
+										<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-<script$(document).ready(function() {
-    $('select').material_select();
-  }); ></script>
+										<script$(document).ready(function() {
+											$('select').material_select();
+										}); ></script>
 
-<script$('select').material_select('destroy'); ></script>
+										<script$('select').material_select('destroy'); ></script>
 
-<!-- Import game and app scripts -->
-
-
-<script src="js/niceties.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-
-<!-- Script for loading screens -->
+										<!-- Import game and app scripts -->
 
 
-<script>
+										<script src="js/niceties.js"></script>
+										<script src="js/materialize.js"></script>
+										<script src="js/init.js"></script>
 
-$('.loadLevelForm').on('submit', ( event ) => {
-  // I'll receive level name and action load.
-  event.preventDefault();
-  this.loadLevel( event );
-})
+										<!-- Script for loading screens -->
 
 
-loadLevelList = function() {
-let command = {'action' : 'loadLevelList'};
-let request = $.param( command );
+										<script>
 
-$.post('server/', request)
-  .then(  levelListString  => {
-    console.log(levelListString);
-    $("#levelSelectDropdown").append(levelListString);
-  });
-}
-
-</script>
+										$('.loadLevelForm').on('submit', ( event ) => {
+											// I'll receive level name and action load.
+											event.preventDefault();
+											this.loadLevel( event );
+										})
 
 
+										loadLevelList = function() {
+											let command = {'action' : 'loadLevelList'};
+											let request = $.param( command );
 
-<script src='js/index.js'></script>
+											$.post('server/', request)
+											.then(  levelListString  => {
+												console.log(levelListString);
+												$("#levelSelectDropdown").append(levelListString);
+											});
+										}
 
-<script>   $(document).ready(function(){
-    $('.tooltipped').tooltip({delay: 50});
-  }); </Script>
-  </body>
-</html>
+										</script>
+
+
+
+										<script src='js/index.js'></script>
+
+										<script>   $(document).ready(function(){
+											$('.tooltipped').tooltip({delay: 50});
+										}); </Script>
+										</body>
+										</html>
