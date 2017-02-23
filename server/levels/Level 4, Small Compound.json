@@ -1,8 +1,8 @@
 {
-    "levelName": "Small Compound",
+    "levelName": "Level 4, Small Compound",
     "author": "Jesse",
-    "projectiles": "60",
-    "bgImage": "..\/images\/gradient3.jpg",
+    "projectiles": "40",
+    "bgImage": "gradient1.png",
     "captives": [
         {
             "ID": "captive_0",
