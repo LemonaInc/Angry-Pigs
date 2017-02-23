@@ -6,31 +6,26 @@
  *   model in the physics sim and the DOM element on screen
  *   
  *   @Copyright 2017, Vancouver Film School.  All Rights Reserved.
+ *   The class has been extended by Jesse Carmack & Jaxon Stevens.
  */
 'use strict';
 
 
 if (__private__ === undefined)
     var __private__ = new WeakMap();
-
-// import Physics from 'scripts/lib/Physics.js';
-
-
 /*
  * Entity Controller
  */
 class Entity {
     
     constructor( worldCtrl = null, dom$ = null, staticBody = false ) {
-	
-    	// some local and constructor stuff here
-        // This is my private set of member variables
         let __m = {  
             mX: 0,
             mY: 0,
             mWidth: 0,
     	    mHeight: 0
         };
+        
         // saved in a public global variable called private, BUT
         // only accessible within this instance of this object
         __private__.set( this, __m );   
@@ -71,7 +66,6 @@ class Entity {
     }
 
     applyImpulse( degrees, power ) {
-	
         let vector = new Physics.Vec2( Math.cos( degrees * DEG_2_RAD ) * power,  Math.sin( degrees * DEG_2_RAD ) * power );
         let myModel = this.physicsModel;
         
@@ -79,7 +73,6 @@ class Entity {
     }
 
     applyForce( degrees, power ) {
-	
         var force = new Physics.Vec2( Math.cos( degrees * DEG_2_RAD ) * power,  Math.sin( degrees * DEG_2_RAD ) * power );
         var myModel = this.physicsModel;
         
@@ -87,15 +80,12 @@ class Entity {
     }
 
     setDensity( density ) {
-    
         var myModelFixture = this.physicsModel.GetFixtureList();
-        
         myModelFixture.SetDensity( density );
     }
 
     update( opts = undefined ) {
         // Update this object based on supplied position/rotation data
-    
     	if (opts !== 'undefined') {
     		
     		let x = opts.x;
@@ -126,12 +116,13 @@ class Entity {
     }
 
     __createModel( staticBody ) {
-	
         let __m = __private__.get( this );
         
         let entitySwitch = this.dom$[0].className;
         let shape, bounce, friction, mass;
         
+        // Depending on which entity, identified by their class,
+        // set particular physics properties
         switch (entitySwitch) {
     		case "wallBottom":
     		    shape = "square";
@@ -163,7 +154,7 @@ class Entity {
     		    friction = 3;
     		    mass = 3;
     			break;
-    		default:
+    		default:  // This ends up being the energyBalls.
     		    shape = "circle";
     		    bounce = 0.7;
     		    friction = 0;
@@ -172,7 +163,7 @@ class Entity {
         }
                 
         let bodyDef = new Physics.BodyDef;    
-        bodyDef.type = Physics.Body.b2_dynamicBody; //All objects will be dynamic (they move around)       
+        bodyDef.type = Physics.Body.b2_dynamicBody; //All objects will be dynamic (they move around)
   
         bodyDef.position.x = __m.mX / WORLD_SCALE;
         bodyDef.position.y = __m.mY / WORLD_SCALE;

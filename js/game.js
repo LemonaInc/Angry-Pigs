@@ -3,69 +3,25 @@ var game = null;
 class Game {
 	constructor() {
 		this.world = new WorldController($("#gameScreen"));
+		this.physicsEntities = [];
 		this.projectiles = 0;
 		this.captivesRemaining = 0;
-		this.physicsEntities = [];
 		this.winLoseDisplayed = false;
-				this.loadLevel();
-
-				// sounds
-				// Here is where the die sound is implemented
-
-				var playerFireSound = new Howl({
-         src: ['FX/Cannon.wav'],
-				 autoplay: false,
-				loop: false,
-  			volume: 0.2,
-  			onend: function() {
-    		console.log('Finished!');
-	  }
-	});
-
-
-				var loadSound = new Howl({
-				 src: ['FX/BackgroundMusic.mp3'],
-				 autoplay: true,
-	      loop: true,
-	      volume: 0.5,
-	       onend: function() {
-
-	    console.log('Finished!');
-
-	  		}
-				});
-
-				// Play the load sound here
-				loadSound.play();
-
-       // Play the buttonClick sound
-				var buttonClick = new Howl({
-				src: ['FX/buttonClick.mp3']
-				});
-
-
+		this.audioPlayer = new Audio();
+		this.loadLevel();
+		
 		//Create event listener for mouse
 		$('#gameScreen').click( () => {
 			this.fire();
-
-			playerFireSound.play();
-
-// Create modal popup here when you lost the game
-// MOVE THIS TO THE DIE FUNCTION
-		//	$('#modal1').modal('open');
-
+			this.audioPlayer.playerFireSound.play();
 		});
-
-
-/*		$('#gameScreen').mousemove( () => {
-			this.rotateCannon();
-		})*/
-
-}
+	}
 
 	update() {
 		this.world.update();
-		// Checks if any object has left the defined bounds (box2d measurements x -25/75), and if so, deletes it.
+		
+		// Checks if any object has left the defined bounds (box2d measurements x -25/75), and if so,
+		// delete the div from the DOM, remove the physicsModel on it, and remove it from the physicsEntities array.
 		for (var i = 0; i < this.physicsEntities.length; i++) {
 			if(this.physicsEntities[i].physicsModel.m_xf.position.x < -25) {
 				$(this.physicsEntities[i].dom$).remove();
@@ -81,7 +37,8 @@ class Game {
 			}
 		}
 		
-
+		// Checks if any captive aliens have floated to the top of the gameScreen, if so,
+		// delete it and lower captivesRemaining int.
 		for (var i = 0; i < this.physicsEntities.length; i++) {
 			if(this.physicsEntities[i].dom$[0].className == "captive"){
 				this.physicsEntities[i].applyImpulse(-90, 5);
@@ -94,52 +51,32 @@ class Game {
 			}
 		}
 
-		// When there are zero captives remaining display the modal popup and play the win sound
+		// If a win or lose hasn't happened yet, and there are physicsEntities in the array (so that
+		// it doesn't trigger first thing on load), when there are zero captives remaining display
+		// the modal popup and play the win sound.
 		if (this.winLoseDisplayed == false) {
 			if(this.physicsEntities.length > 0 && this.captivesRemaining == 0) {
-
 				$('#modal2').modal('open');
 				this.winLoseDisplayed = true;
-
-				//  create and play the winSound here
-				var winSound = new Howl({
-				 src: ['FX/EndGame.mp3'],
-				 autoplay: false,
-				 loop: false,
-				 volume: 0.5,
-				 onend: function() {
-
-			console.log('Finished!');
-
-				}
-				});
-				
-
-	// This will only play the winSound once
-			winSound.once('load', function(){
-		  winSound.play();
-		});
-
+				this.audioPlayer.winSound.play();
 			}
-			
 		}
-
+		// Same for lose state if player runs out of projectiles.
 		if (this.winLoseDisplayed == false) {
 			if (this.physicsEntities.length > 0 && this.projectiles <= 0) {
 				$('#modal1').modal('open');
 				this.winLoseDisplayed = true;
 			}
 		}
-
+		
 	}
-
 
 	render() {
 		let m = __private__.get( this );
 		this.physicsEntities.forEach( ( entity ) => {
 			entity.render();
 		});
-
+		
 		this.world.model.ClearForces();
 	}
 
@@ -147,10 +84,8 @@ class Game {
 		let frame = ( timestamp ) => {
 			this.update();
 			this.render();
-
 			window.requestAnimationFrame( frame );
 		}
-
 		window.requestAnimationFrame( frame );
 	}
 
@@ -167,7 +102,7 @@ class Game {
 				this.world = new WorldController($("#gameScreen"));
 	            this.physicsEntities = [];
 
-	            // UFO animates in
+	            // UFO animates in and then continues to hover.
 				$('#gameScreen').prepend(`<div id="ufo"></div>`);
 				$('#ufo').animate({'margin': "-100px 0 0 240px"}, 2000, function() { game.ufoHover(); });
 
@@ -177,9 +112,12 @@ class Game {
 				// Change background image based on .json file.
 				let $newImage = `url('images/${levelDataObj.bgImage}')`;
 				$('body').css("background-image", $newImage);
-
+				
+				// Set projectiles based on .json file info.
 				this.projectiles = levelDataObj.projectiles;
 
+				// Read level data from .json file, for each element, create a div, classes and ids.
+				// Add CSS to each element.  Do this for each object type:
 				// Wall Bottoms
 				for (let i = 0; i < levelDataObj.wallBottoms.length; i++) {
 					var newWallBottom = document.createElement("div");
@@ -203,6 +141,8 @@ class Game {
 
 			        $("#gameScreen").append(newWallBottom);
 
+			        
+			        // Initiate box2D instance of this object, add it to physicsEntities array.
 			        let ent = new Entity(this.world, $(newWallBottom));
 			        this.physicsEntities.push(ent);
 				}
@@ -319,13 +259,7 @@ class Game {
 			})
 	}
 
-/*	rotateCannon() {
-		console.log(event.offsetX);
-		console.log(event.offsetY);
-	}*/
-
 	fire() {
-		
 		if (this.projectiles > 0) {
 			//Determine angle from the centre of the UFO (where balls are released) to mouse cursor.
 			var ufoPoint = { x: 520, y: 10 }
@@ -353,11 +287,12 @@ class Game {
 	}
 	
 	ufoHover() {
+		// Simplify this.
 		var floatUp = ( (targetElement, speed) => {
-		    $(targetElement).css({'margin': "-90px 0 0 240px"});
+		    $(targetElement).css({'margin': "-100px 0 0 240px"});
 		    $(targetElement).animate(
 		        {
-		        'margin': "-100px 0 0 240px"
+		        'margin': "-90px 0 0 240px"
 		        }, 
 		        { 
 		        duration: speed, 
@@ -369,10 +304,10 @@ class Game {
 		});
 		
 		var floatDown = ( (targetElement, speed) => {
-		    $(targetElement).css({'margin': "-100px 0 0 240px"});
+		    $(targetElement).css({'margin': "-90px 0 0 240px"});
 		    $(targetElement).animate(
 		        {
-		        'margin': "-90px 0 0 240px"
+		        'margin': "-100px 0 0 240px"
 		        }, 
 		        { 
 		        duration: speed, 
@@ -383,12 +318,9 @@ class Game {
 		    );
 		});
 		
-		floatUp($('#ufo'), 2000);
 		floatDown($('#ufo'), 2000);
-		
-		
+		floatUp($('#ufo'), 2000);
 	}
-	
 }
 
 $(document).ready( () => {
