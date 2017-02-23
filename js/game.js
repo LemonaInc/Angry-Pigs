@@ -47,6 +47,7 @@ class Game {
 						this.world.destroy(this.physicsEntities[i].physicsModel);
 						this.physicsEntities.splice(i, 1);
 						this.captivesRemaining--;
+						$('#captivesUI span').text(this.captivesRemaining);
 				}
 			}
 		}
@@ -113,8 +114,9 @@ class Game {
 				let $newImage = `url('images/${levelDataObj.bgImage}')`;
 				$('body').css("background-image", $newImage);
 				
-				// Set projectiles based on .json file info.
+				// Set projectiles based on .json file info and show in UI.
 				this.projectiles = levelDataObj.projectiles;
+				$('#projectilesUI span').text(this.projectiles);
 
 				// Read level data from .json file, for each element, create a div, classes and ids.
 				// Add CSS to each element.  Do this for each object type:
@@ -256,6 +258,8 @@ class Game {
 			        this.captivesRemaining++;
 			        console.log(this.captivesRemaining);
 				}
+				
+				$('#captivesUI span').text(this.captivesRemaining);
 			})
 	}
 
@@ -282,6 +286,10 @@ class Game {
 			ent.applyForce( ( angleDeg ), distanceBetweenPoints );
 			
 			this.projectiles--;
+			
+			// Updates projectiles UI in DOM
+			$('#projectilesUI span').text(this.projectiles);
+			
 			console.log(this.projectiles);
 		}
 	}
@@ -292,7 +300,7 @@ class Game {
 		    $(targetElement).css({'margin': "-100px 0 0 240px"});
 		    $(targetElement).animate(
 		        {
-		        'margin': "-90px 0 0 240px"
+		        'margin': "-85px 0 0 240px"
 		        }, 
 		        { 
 		        duration: speed, 
@@ -304,7 +312,7 @@ class Game {
 		});
 		
 		var floatDown = ( (targetElement, speed) => {
-		    $(targetElement).css({'margin': "-90px 0 0 240px"});
+		    $(targetElement).css({'margin': "-85px 0 0 240px"});
 		    $(targetElement).animate(
 		        {
 		        'margin': "-100px 0 0 240px"

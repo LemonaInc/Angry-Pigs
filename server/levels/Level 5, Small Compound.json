@@ -1,48 +1,27 @@
 {
-    "levelName": "Test With a Lot of Things",
-    "author": "jesse",
-    "projectiles": "60",
-    "bgImage": "gradient3.png",
+    "levelName": "Level 5, Small Compound",
+    "author": "Jesse",
+    "projectiles": "20",
+    "bgImage": "gradient1.png",
     "captives": [
         {
             "ID": "captive_0",
-            "xPos": "403px",
-            "yPos": "423px",
+            "xPos": "479px",
+            "yPos": "471px",
             "width": "28px",
             "height": "73px"
         },
         {
             "ID": "captive_1",
-            "xPos": "205px",
-            "yPos": "430px",
+            "xPos": "364px",
+            "yPos": "568px",
             "width": "28px",
             "height": "73px"
         },
         {
             "ID": "captive_2",
-            "xPos": "228px",
-            "yPos": "505px",
-            "width": "28px",
-            "height": "73px"
-        },
-        {
-            "ID": "captive_3",
-            "xPos": "502px",
-            "yPos": "523px",
-            "width": "28px",
-            "height": "73px"
-        },
-        {
-            "ID": "captive_4",
-            "xPos": "681px",
-            "yPos": "496px",
-            "width": "28px",
-            "height": "73px"
-        },
-        {
-            "ID": "captive_5",
-            "xPos": "536px",
-            "yPos": "528px",
+            "xPos": "823px",
+            "yPos": "566px",
             "width": "28px",
             "height": "73px"
         }
@@ -50,22 +29,22 @@
     "wallTops": [
         {
             "ID": "wallTop_0",
-            "xPos": "624px",
-            "yPos": "122px",
+            "xPos": "436px",
+            "yPos": "368px",
             "width": "112px",
             "height": "78px"
         },
         {
             "ID": "wallTop_1",
-            "xPos": "181px",
-            "yPos": "286px",
+            "xPos": "322px",
+            "yPos": "465px",
             "width": "112px",
             "height": "78px"
         },
         {
             "ID": "wallTop_2",
-            "xPos": "611px",
-            "yPos": "310px",
+            "xPos": "780px",
+            "yPos": "366px",
             "width": "112px",
             "height": "78px"
         }
@@ -73,22 +52,15 @@
     "wallBottoms": [
         {
             "ID": "wallBottom_0",
-            "xPos": "499px",
-            "yPos": "231px",
+            "xPos": "780px",
+            "yPos": "445px",
             "width": "112px",
             "height": "97px"
         },
         {
             "ID": "wallBottom_1",
-            "xPos": "169px",
-            "yPos": "94px",
-            "width": "112px",
-            "height": "97px"
-        },
-        {
-            "ID": "wallBottom_2",
-            "xPos": "468px",
-            "yPos": "372px",
+            "xPos": "436px",
+            "yPos": "545px",
             "width": "112px",
             "height": "97px"
         }
@@ -96,29 +68,43 @@
     "pillars": [
         {
             "ID": "pillar_0",
-            "xPos": "358px",
-            "yPos": "263px",
+            "xPos": "865px",
+            "yPos": "544px",
             "width": "28px",
             "height": "97px"
         },
         {
             "ID": "pillar_1",
-            "xPos": "294px",
-            "yPos": "430px",
+            "xPos": "322px",
+            "yPos": "546px",
             "width": "28px",
             "height": "97px"
         },
         {
             "ID": "pillar_2",
-            "xPos": "782px",
-            "yPos": "505px",
+            "xPos": "407px",
+            "yPos": "544px",
             "width": "28px",
             "height": "97px"
         },
         {
             "ID": "pillar_3",
-            "xPos": "331px",
-            "yPos": "528px",
+            "xPos": "436px",
+            "yPos": "447px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_4",
+            "xPos": "520px",
+            "yPos": "447px",
+            "width": "28px",
+            "height": "97px"
+        },
+        {
+            "ID": "pillar_5",
+            "xPos": "781px",
+            "yPos": "543px",
             "width": "28px",
             "height": "97px"
         }
@@ -126,15 +112,15 @@
     "towers": [
         {
             "ID": "tower_0",
-            "xPos": "866px",
-            "yPos": "296px",
+            "xPos": "894px",
+            "yPos": "297px",
             "width": "106px",
             "height": "343px"
         },
         {
             "ID": "tower_1",
-            "xPos": "45px",
-            "yPos": "293px",
+            "xPos": "29px",
+            "yPos": "300px",
             "width": "106px",
             "height": "343px"
         }

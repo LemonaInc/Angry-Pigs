@@ -1,154 +1,183 @@
 * {
-  box-sizing: border-box;
-  margin: 0; /* Enables elements to touch sides of browser window. */
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0; /* Enables elements to touch sides of browser window. */
+	padding: 0;
 }
 
 body {
-
-  background-image: url('../images/gradient4.png');
-  background-repeat: repeat-x;
-  background-position: 0px -150px;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+	background-image: url('../images/gradient4.png');
+	background-repeat: repeat-x;
+	background-position: 0px -150px;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
 }
 
-ul.tabBar li a:hover {background-color: #ddd; cursor: pointer;}
-ul.tabBar li a:focus, .active {background-color: #f4e2bc;}
+ul.tabBar li a:hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+
+ul.tabBar li a:focus, .active {
+	background-color: #f4e2bc;
+}
+
 .container {
-  width:1334px; /* Defined width keeps divs from falling down the page on resize
-  Change so that border-box works with this. */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	width: 1334px;  /* Defined width keeps divs from falling down the page on resize
+      				   Change so that border-box works with this. */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .background {
-  background-image: url("../images/ground.png");
-  background-repeat: repeat-x;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  position: absolute;
-  top: 848px;
+	background-image: url("../images/ground.png");
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	position: absolute;
+	top: 848px;
 }
 
 .mountains {
-  position:absolute;
-  top:-300px;
-  background-image: url("../images/mountains.png");
-  background-repeat: repeat-x;
-  height: 300px;
-  width:100%
+	position: absolute;
+	top: -300px;
+	background-image: url("../images/mountains.png");
+	background-repeat: repeat-x;
+	height: 300px;
+	width: 100%
 }
 
 .grass {
-  position:absolute;
-  top:-17px;
-  background-image: url("../images/grass.png");
-  background-repeat: repeat-x;
-  height: 40px;
-  width:100%
+	position: absolute;
+	top: -17px;
+	background-image: url("../images/grass.png");
+	background-repeat: repeat-x;
+	height: 40px;
+	width: 100%
 }
 
 #inspector {
-  color: white;
-  border-style: inherit;
-  border-color: white;
-  border-width: inherit;
-  width: 300px;
-  height: 648px;
-  float: left;
+	color: white;
+	border-style: inherit;
+	border-color: white;
+	border-width: inherit;
+	width: 300px;
+	height: 648px;
+	float: left;
 }
 
 #gameScreen {
-  background-image: url('images/.jpg');
-  min-width: 1024px;
-  min-height: 648px;
-  position: relative;
-  margin: 0px 0 0 0px;
-  background-size: 100%;
-  top: 200px;
-  z-index: 10;
-  -webkit-user-select: none;
+	background-image: url('images/.jpg');
+	min-width: 1024px;
+	min-height: 648px;
+	position: relative;
+	margin: 0px 0 0 0px;
+	background-size: 100%;
+	top: 200px;
+	z-index: 10;
+	-webkit-user-select: none;
 }
 
 .editor {
-  overflow: hidden;
-  border: dotted;
-  border-color: white;
+	overflow: hidden;
+	border: dotted;
+	border-color: white;
 }
 
 #ufo {
-  background-image: url('../images/ufo.png');
-  width: 560px;
-  height: 160px;
-  position: absolute;
-  margin: -320px 0 0 240px;
-  z-index: 15;
+	background-image: url('../images/ufo.png');
+	width: 560px;
+	height: 160px;
+	position: absolute;
+	margin: -320px 0 0 240px;
+	z-index: 15;
 }
 
 .energyBall {
-  background-image: url('../images/energyball.png');
-  width: 46px;
-  height: 45px;
-  left: 500px;
-  top: 40px;
-  position: absolute;
+	background-image: url('../images/energyball.png');
+	width: 46px;
+	height: 45px;
+	left: 500px;
+	top: 40px;
+	position: absolute;
 }
 
 #levelToLoad {
-  display: none;
+	display: none;
 }
 
 #editButton {
-  position: fixed;
-  top: 15px !important;
-  left: 15px !important;
+	position: fixed;
+	top: 15px !important;
+	left: 15px !important;
 }
 
-
 #reloadButton {
-  position: fixed;
-  top: 15px !important;
-  right: 15px !important;
+	position: fixed;
+	top: 15px !important;
+	right: 15px !important;
+}
 
+#captivesUI {
+	position: fixed;
+	top: 15px !important;
+	right: 90px !important;
+}
+
+#projectilesUI {
+	position: fixed;
+	top: 15px !important;
+	right: 209px !important;
 }
 
 #goToLevelEditor {
-  position: fixed;
-  top: 15px !important;
-  left: 218px !important;
-
+	position: fixed;
+	top: 15px !important;
+	left: 218px !important;
 }
 
-
 #mainMenuButton {
-  position: fixed;
-  top: 15px !important;
-  left: 200px !important;
-
+	position: fixed;
+	top: 15px !important;
+	left: 190px !important;
 }
 
 #popupButton {
-  position: fixed;
-  top: 200px !important;
-  left: 15px !important;
-  
+	position: fixed;
+	top: 200px !important;
+	left: 15px !important;
 }
 
+.captivesIcon {
+	background-image: url("../images/captiveIcon.png");
+	background-size: 18px 43px;
+	background-repeat: no-repeat;
+	margin-top: 5px;
+	width: 18px;
+	height: 43px;
+}
+
+.projectilesIcon {
+	background-image: url("../images/energyBallIcon.png");
+	background-size: 33px 33px;
+	background-repeat: no-repeat;
+	margin-top: 11px;
+	width: 33px;
+	height: 33px;
+}
 
 #popupWinButton {
-  position: fixed;
-  top: 400px !important;
-  left: 15px !important;
-
+	position: fixed;
+	top: 400px !important;
+	left: 15px !important;
 }
 
 .icon-block {
-  padding: 0 15px;
+	padding: 0 15px;
 }
+
 .icon-block .material-icons {
-  font-size: inherit;
+	font-size: inherit;
 }

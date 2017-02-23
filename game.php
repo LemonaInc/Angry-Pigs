@@ -78,6 +78,14 @@ Castles & UFOs
 		<a id="reloadButton" class="btn tooltipped btn-floating btn-large waves-effect waves-light #1de9b6 teal accent-3 z-depth-5"
 		onClick="history.go(0)" value="Refresh" data-position="bottom" data-delay="50"
 		data-tooltip="Reload Level"><i class="material-icons left">loop</i>reload</a>
+		
+		<div id="captivesUI" class="btn-large tooltipped waves-light grey darken-3 z-depth-5"
+		value="Refresh" data-position="bottom" data-delay="50" data-tooltip="Number of aliens to rescue"
+		data-tooltip="Reload Level"><i class="left captivesIcon"></i><span>0</span></div>
+		
+		<div id="projectilesUI" class="btn-large tooltipped waves-light grey darken-3 z-depth-5"
+		value="Refresh" data-position="bottom" data-delay="50" data-tooltip="Number of remaining shots you have"
+		data-tooltip="Reload Level"><i class="left projectilesIcon"></i></i><span>0</span></div>
 
 		<!-- Go to level editor button -->
 		<a id="goToLevelEditor" class="btn tooltipped btn-large waves-light #b388ff deep-purple accent-1 z-depth-5"

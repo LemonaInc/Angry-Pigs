@@ -16,4 +16,4 @@ Perforce depot in the following directory:
 
 ####**Known Issues**
 --------
-Very poor support for Firefox.  Rendering issues galore.
+- Lots of rendering problems on Firefox

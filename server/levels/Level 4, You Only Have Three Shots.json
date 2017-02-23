@@ -1,7 +1,7 @@
 {
-    "levelName": "Level 1",
+    "levelName": "Level 4, You Only Have Three Shots",
     "author": "Jesse",
-    "projectiles": "100",
+    "projectiles": "3",
     "bgImage": "gradient2.png",
     "captives": [
         {
