@@ -8,5 +8,7 @@ The online game was built using PHP, Javascript, jQuery and JSON for saving the 
 # Play Online
 You can play the game online at http://www.castlesandufos.com
 
+Copyright 2017 Vancouver Film School, All Rights Reserved
+
 
 
